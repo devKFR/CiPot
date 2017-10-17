@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "358614735905",
+    "firebase_url": "https://c-pot-cd7a8.firebaseio.com",
+    "project_id": "c-pot-cd7a8",
+    "storage_bucket": "c-pot-cd7a8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:358614735905:android:3b6393926fde6b22",
+        "android_client_info": {
+          "package_name": "com.ddpl.cipot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "358614735905-sauu8n079ent119jk0el8ehsglrlubfb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9-rzpFZxbapK78n03akJwUKUmL_qLC2Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "358614735905-sauu8n079ent119jk0el8ehsglrlubfb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

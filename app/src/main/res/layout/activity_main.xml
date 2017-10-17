@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e7e7e7"
+    android:orientation="vertical"
+    tools:context="com.ddpl.cipot.MainActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:contentDescription="@string/logo"
+        android:src="@mipmap/logotrans" />
+
+    <TextView
+        android:id="@+id/Ciluk_Baa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="11dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Pusat PADU Ciluk-Baa"
+        android:textAlignment="center"
+        android:textColor="#e76348"
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/alamat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="JL Diponegoro II/31 Tulungagung Telp (0355) 323022"
+        android:textAlignment="center"
+        android:textColor="#b82d24"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="#f7fcd1"
+        android:text="SELAMAT DATANG"
+        android:textAlignment="center"
+        android:textColor="#e76348"
+        android:textSize="28sp"/>
+
+        <LinearLayout
+            android:id="@+id/layout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="48dp"
+            android:background="#ffbd4a"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/nomor_induk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:background="#dca340"
+                android:hint="Nomor Induk"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textSize="32sp" />
+
+            <EditText
+                android:id="@+id/tanggal_lahir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="8dp"
+                android:background="#dca340"
+                android:hint="Tanggal Lahir"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textSize="32sp" />
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="8dp"
+                android:background="#b82d24"
+                android:text="login"
+                android:textColor="#ffbd4a"
+                android:textSize="32sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
