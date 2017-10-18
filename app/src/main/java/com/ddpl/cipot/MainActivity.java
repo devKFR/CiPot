@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         edt_noInduk = (EditText)findViewById(R.id.nomor_induk);
         edt_tanggal = (EditText)findViewById(R.id.tanggal_lahir);
+        //test
 
         btn_login = (Button)findViewById(R.id.btn_login);
         btn_login.setOnClickListener(this);
