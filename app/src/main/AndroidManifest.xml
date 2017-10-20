@@ -9,16 +9,17 @@
         android:roundIcon="@mipmap/logotrans"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.ddpl.cipot.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.ddpl.cipot.HomeSiswaActivity" />
-        <activity android:name="com.ddpl.cipot.ProfilSiswaActivity" />
-        <activity android:name="com.ddpl.cipot.IndikatorKemampuanActivity"></activity>
+        <activity android:name=".HomeSiswaActivity" />
+        <activity android:name=".ProfilSiswaActivity" />
+        <activity android:name=".IndikatorKemampuanActivity" />
+        <activity android:name=".IndikatorKemampuanDetail"></activity>
     </application>
 
 </manifest>

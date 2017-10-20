@@ -8,10 +8,11 @@
     tools:context="com.ddpl.cipot.ProfilSiswaActivity">
 
         <Button
+            android:id="@+id/btn_kembaliProfil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Kembali"
-            android:layout_alignParentBottom="true">
+            android:layout_alignParentBottom="true"
+            android:text="Kembali">
         </Button>
 
     <ScrollView
@@ -171,10 +172,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="64dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginTop="32dp"
-                android:layout_marginBottom="64dp"
                 android:background="#ffffff"
                 android:orientation="vertical">
 
