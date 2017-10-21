@@ -1,6 +1,7 @@
 package com.ddpl.cipot;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btn_login = (Button)findViewById(R.id.btn_login);
         btn_login.setOnClickListener(this);
+
     }
 
     @Override

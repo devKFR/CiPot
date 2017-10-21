@@ -20,11 +20,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:background="#90ae15"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/kotak_hijau">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/foto_siswa"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center_horizontal"
@@ -45,7 +44,7 @@
             android:id="@+id/update"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_margin="0dp"
             android:gravity="center"
             android:text="Update Terakhir"
             android:textColor="#ffffff"
@@ -76,7 +75,6 @@
             android:textSize="22sp" />
 
         <Button
-            android:id="@+id/btn_laporanSemester"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="laporan semester"
@@ -84,7 +82,6 @@
             android:textSize="22sp" />
 
         <Button
-            android:id="@+id/btn_hasilAkhir"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="hasil akhir"
