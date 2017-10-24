@@ -1,4 +1,4 @@
 # CiPot
 Aplikasi Rapot PAUD Ciluk-baa.
 
-Pengembangan dalam mata kuliah DDPL dengan dosen Bapak Hatma
+Pengembangan dalam mata kuliah DDPL
