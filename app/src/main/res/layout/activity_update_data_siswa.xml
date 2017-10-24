@@ -4,29 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#e7e7e7"
-    tools:context="com.ddpl.cipot.HomeGuruActivity">
-
-    <TextView
-        android:id="@+id/tv_halamanUtama"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:gravity="center_horizontal"
-        android:text="HALAMAN UTAMA"
-        android:textColor="#90ae15"
-        android:textSize="22sp" />
+    tools:context="com.ddpl.cipot.UpdateDataSiswaActivity">
 
     <LinearLayout
-        android:id="@+id/layout_profilGuru"
+        android:id="@+id/layout_profilSiswa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_halamanUtama"
-        android:layout_margin="8dp"
+        android:layout_margin="16dp"
         android:background="@drawable/kotak_hijau"
         android:orientation="vertical">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/iv_fotoGuru"
+            android:id="@+id/iv_fotoSiswaProfil"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center_horizontal"
@@ -34,17 +23,17 @@
             android:src="@mipmap/logotrans" />
 
         <TextView
-            android:id="@+id/tv_namaGuru"
+            android:id="@+id/tv_namaSiswa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:gravity="center"
-            android:text="Nama Guru"
+            android:text="Nama Siswa"
             android:textColor="#ffffff"
             android:textSize="32sp" />
 
         <TextView
-            android:id="@+id/tv_updateGuru"
+            android:id="@+id/tv_updateSiswa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
@@ -55,29 +44,26 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv_namaSiswaDitangani"
+    <Button
+        android:id="@+id/btn_tambahLaporan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/layout_profilGuru"
-        android:gravity="center"
-        android:text="Nama Siswa yang ditangani" />
+        android:layout_below="@id/layout_profilSiswa"
+        android:text="Tambah Laporan Semester" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_namaSiswaDitangani"
-        android:paddingBottom="48dp"
+        android:layout_below="@id/btn_tambahLaporan"
+        android:layout_marginBottom="32dp"
         android:scrollbars="vertical" />
 
     <Button
-        android:id="@+id/btn_logout"
+        android:id="@+id/btn_kembaliIndikator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="logout"
-        android:textColor="#000000"
-        android:textSize="22sp" />
+        android:text="Kembali"></Button>
 
 </RelativeLayout>

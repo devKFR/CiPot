@@ -51,7 +51,10 @@ public class HomeGuruActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void showSelected(SiswaAdapter adapter, int position) {
-        Toast.makeText(this, "Kamu memilih " + adapter.textSiswa[position], Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Kamu memilih " + adapter.text[position], Toast.LENGTH_SHORT).show();
+        Intent updateData = new Intent(HomeGuruActivity.this, UpdateDataSiswaActivity.class);
+        //detailIndikator.putExtra(IndikatorKemampuanDetail.hold, cardViewAdapter.text[position]);
+        startActivity(updateData);
     }
 
     @Override

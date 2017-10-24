@@ -21,7 +21,8 @@
         <activity android:name=".IndikatorKemampuanActivity" />
         <activity android:name=".IndikatorKemampuanDetail" />
         <activity android:name=".LaporanSemester" />
-        <activity android:name=".HomeGuruActivity"></activity>
+        <activity android:name=".HomeGuruActivity" />
+        <activity android:name=".UpdateDataSiswaActivity"></activity>
     </application>
 
 </manifest>

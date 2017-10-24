@@ -17,7 +17,6 @@ public class HomeSiswaActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_siswa);
 
@@ -34,7 +33,6 @@ public class HomeSiswaActivity extends AppCompatActivity implements View.OnClick
 
         String nama = getIntent().getStringExtra(Nama);
         String update = getIntent().getStringExtra(upDate);
-
         tvNama.setText(nama);
         tvTanggal.setText("Update Terakhir :"+update);
     }
