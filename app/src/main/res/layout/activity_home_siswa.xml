@@ -10,16 +10,16 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_marginTop="16dp"
         android:gravity="center_horizontal"
-        android:text="HALAMAN UTAMA"
-        android:textColor="#90ae15"
+        android:text="Halaman Utama"
+        android:textColor="#61771d"
         android:textSize="22sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_margin="16dp"
         android:background="@drawable/kotak_hijau"
         android:orientation="vertical">
 
@@ -55,7 +55,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:orientation="vertical">
 
         <Button
@@ -64,7 +65,10 @@
             android:layout_height="wrap_content"
             android:text="Profil siswa"
             android:textColor="#90ae15"
-            android:textSize="22sp" />
+            android:textSize="18sp"
+            android:background="@drawable/tombol_atas"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_marginTop="4dp"/>
 
         <Button
             android:id="@+id/btn_indikatorSiswa"
@@ -72,7 +76,11 @@
             android:layout_height="wrap_content"
             android:text="Indikator kemampuan"
             android:textColor="#90ae15"
-            android:textSize="22sp" />
+            android:textSize="18sp"
+            android:background="@drawable/tombol_tengah"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_marginTop="4dp"
+            />
 
         <Button
             android:id="@+id/btn_laporanSiswa"
@@ -80,17 +88,23 @@
             android:layout_height="wrap_content"
             android:text="laporan semester"
             android:textColor="#90ae15"
-            android:textSize="22sp" />
+            android:textSize="18sp"
+            android:background="@drawable/tombol_bawah"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_marginTop="4dp" />
+
+
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="logout"
+            android:textColor="#ffbd4a"
+            android:textSize="18sp"
+            android:background="@drawable/tombol_kembali"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_marginTop="18dp"  />
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btn_logout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="logout"
-        android:textColor="#000000"
-        android:textSize="22sp" />
-
 </LinearLayout>
 
