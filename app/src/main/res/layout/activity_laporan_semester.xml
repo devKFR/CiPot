@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="8dp"
+        android:background="#468890"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:text="LAPORAN SEMESTER"
+            android:textColor="#ffffff"
+            android:textSize="26sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="110dp"
+        android:layout_marginTop="80dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_laporanSemester"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:text="Semester 1"
+            android:textColor="#468890"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/btn_laporanSemester"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Semester 2"
+            android:textColor="#468890"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/btn_laporanSemester"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Semester 3"
+            android:textColor="#468890"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/btn_laporanSemester"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="Semester 4"
+            android:textColor="#468890"
+            android:textSize="22sp" />
+
+    </LinearLayout>
+</LinearLayout>
