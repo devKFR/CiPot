@@ -7,9 +7,8 @@
     android:background="#e7e7e7"
     tools:context="com.ddpl.cipot.ProfilSiswaActivity">
 
-
     <ScrollView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp">
@@ -18,172 +17,176 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginTop="32dp"
-                android:background="#90ae15"
-                android:gravity="center"
-                android:text="IDENTITAS SISWA"
-                android:textColor="#ffffff"
-                android:textSize="22sp" />
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:background="#ffffff"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/kotak_hijau"
+                android:layout_margin="16dp"
+                android:padding="0dp">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center_horizontal"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Identitas Siswa"
+                    android:textColor="#ffffff"
+                    android:textSize="22dp"
                     android:layout_margin="16dp"
-                    android:src="@mipmap/logotrans" />
-
-                <TableLayout
+                    />
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="16dp">
+                    android:background="@drawable/kotak_putih"
+                    android:padding="8dp"
+                    android:orientation="vertical">
 
-                    <TableRow android:layout_marginBottom="16dp">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="16dp"
+                        android:src="@mipmap/logotrans" />
 
-                        <TextView
-                            style="@style/textTable.bold"
-                            android:text="Nomor Akta" />
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="16dp">
 
-                        <TextView
-                            style="@style/textTable"
-                            android:layout_weight="1"
-                            android:text="Text Placeholder" />
-                    </TableRow>
+                        <TableRow android:layout_marginBottom="16dp">
 
-                    <TableRow android:layout_marginBottom="16dp">
+                            <TextView
+                                style="@style/textTable.bold"
+                                android:text="Nomor Akta" />
 
-                        <TextView
-                            style="@style/textTable.bold"
-                            android:text="Nama Lengkap" />
+                            <TextView
+                                style="@style/textTable"
+                                android:layout_weight="1"
+                                android:text="Text Placeholder" />
+                        </TableRow>
 
-                        <TextView
-                            style="@style/textTable"
-                            android:layout_weight="1"
-                            android:text="Text Placeholder" />
-                    </TableRow>
+                        <TableRow android:layout_marginBottom="16dp">
 
-                    <TableRow android:layout_marginBottom="16dp">
+                            <TextView
+                                style="@style/textTable.bold"
+                                android:text="Nama Lengkap" />
 
-                        <TextView
-                            style="@style/textTable.bold"
-                            android:text="Nama Panggilan" />
+                            <TextView
+                                style="@style/textTable"
+                                android:layout_weight="1"
+                                android:text="Text Placeholder" />
+                        </TableRow>
 
-                        <TextView
-                            style="@style/textTable"
-                            android:layout_weight="1"
-                            android:text="Text Placeholder" />
-                    </TableRow>
+                        <TableRow android:layout_marginBottom="16dp">
 
-                    <TableRow android:layout_marginBottom="16dp">
+                            <TextView
+                                style="@style/textTable.bold"
+                                android:text="Nama Panggilan" />
 
-                        <TextView
-                            style="@style/textTable.bold"
-                            android:text="Tempat Lahir" />
+                            <TextView
+                                style="@style/textTable"
+                                android:layout_weight="1"
+                                android:text="Text Placeholder" />
+                        </TableRow>
 
-                        <TextView
-                            style="@style/textTable"
-                            android:layout_weight="1"
-                            android:text="Text Placeholder" />
-                    </TableRow>
+                        <TableRow android:layout_marginBottom="16dp">
 
-                    <TableRow android:layout_marginBottom="16dp">
+                            <TextView
+                                style="@style/textTable.bold"
+                                android:text="Tempat Lahir" />
 
-                        <TextView
-                            style="@style/textTable.bold"
-                            android:text="Tanggal Lahir" />
+                            <TextView
+                                style="@style/textTable"
+                                android:layout_weight="1"
+                                android:text="Text Placeholder" />
+                        </TableRow>
 
-                        <TextView
-                            style="@style/textTable"
-                            android:layout_weight="1"
-                            android:text="Text Placeholder" />
-                    </TableRow>
+                        <TableRow android:layout_marginBottom="16dp">
 
-                    <TableRow android:layout_marginBottom="16dp">
+                            <TextView
+                                style="@style/textTable.bold"
+                                android:text="Tanggal Lahir" />
 
-                        <TextView
-                            style="@style/textTable.bold"
-                            android:text="Jenis Kelamin" />
+                            <TextView
+                                style="@style/textTable"
+                                android:layout_weight="1"
+                                android:text="Text Placeholder" />
+                        </TableRow>
 
-                        <TextView
-                            style="@style/textTable"
-                            android:layout_weight="1"
-                            android:text="Text Placeholder" />
-                    </TableRow>
+                        <TableRow android:layout_marginBottom="16dp">
 
-                    <TableRow android:layout_marginBottom="16dp">
+                            <TextView
+                                style="@style/textTable.bold"
+                                android:text="Jenis Kelamin" />
 
-                        <TextView
-                            style="@style/textTable.bold"
-                            android:text="Agama" />
+                            <TextView
+                                style="@style/textTable"
+                                android:layout_weight="1"
+                                android:text="Text Placeholder" />
+                        </TableRow>
 
-                        <TextView
-                            style="@style/textTable"
-                            android:layout_weight="1"
-                            android:text="Text Placeholder" />
-                    </TableRow>
+                        <TableRow android:layout_marginBottom="16dp">
 
-                    <TableRow android:layout_marginBottom="16dp">
+                            <TextView
+                                style="@style/textTable.bold"
+                                android:text="Agama" />
 
-                        <TextView
-                            style="@style/textTable.bold"
-                            android:text="Anak Ke-" />
+                            <TextView
+                                style="@style/textTable"
+                                android:layout_weight="1"
+                                android:text="Text Placeholder" />
+                        </TableRow>
 
-                        <TextView
-                            style="@style/textTable"
-                            android:layout_weight="1"
-                            android:text="Text Placeholder" />
-                    </TableRow>
+                        <TableRow android:layout_marginBottom="16dp">
 
-                    <TableRow android:layout_marginBottom="16dp">
+                            <TextView
+                                style="@style/textTable.bold"
+                                android:text="Anak Ke-" />
 
-                        <TextView
-                            style="@style/textTable.bold"
-                            android:text="Jumlah Saudara" />
+                            <TextView
+                                style="@style/textTable"
+                                android:layout_weight="1"
+                                android:text="Text Placeholder" />
+                        </TableRow>
 
-                        <TextView
-                            style="@style/textTable"
-                            android:layout_weight="1"
-                            android:text="Text Placeholder" />
-                    </TableRow>
-                </TableLayout>
+                        <TableRow android:layout_marginBottom="16dp">
 
+                            <TextView
+                                style="@style/textTable.bold"
+                                android:text="Jumlah Saudara" />
+
+                            <TextView
+                                style="@style/textTable"
+                                android:layout_weight="1"
+                                android:text="Text Placeholder" />
+                        </TableRow>
+                    </TableLayout>
             </LinearLayout>
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/kotak_61771d"
+            android:layout_margin="16dp"
+            android:padding="0dp">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginTop="32dp"
-                android:background="#61771D"
                 android:gravity="center"
-                android:text="IDENTITAS ORANG TUA"
+                android:text="Identitas Orang Tua"
                 android:textColor="#ffffff"
-                android:textSize="22sp" />
+                android:textSize="22dp"
+                android:layout_margin="16dp"
+                />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="64dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:background="#ffffff"
+                android:background="@drawable/kotak_putih"
+                android:padding="8dp"
                 android:orientation="vertical">
-
-
                 <TableLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -252,7 +255,7 @@
                 </TableLayout>
 
             </LinearLayout>
-
+        </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
