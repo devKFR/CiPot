@@ -7,17 +7,24 @@
     tools:context="com.ddpl.cipot.LaporanSemester">
 
     <TextView
+        android:id="@+id/tv_tahunSemesters"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#468890"
         android:gravity="center"
-        android:padding="20dp"
-        android:text="Laporan Semester" />
+        android:padding="11dp"
+        android:text="Laporan Semester"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
 
     <Spinner
         android:id="@+id/sp_semester"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp"></Spinner>
+        android:padding="20dp">
+
+    </Spinner>
+
 
     <TextView
         android:id="@+id/tv_tahunSemester"
