@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:background="@drawable/kotak_hijau"
+        android:background="@drawable/kotak_61771d"
         android:orientation="vertical">
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -49,7 +49,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/layout_profilSiswa"
-        android:text="Tambah Laporan Semester" />
+        android:text="Tambah Laporan Semester"
+        style="?android:attr/borderlessButtonStyle"
+        android:background="@drawable/tombol_10c6c8"
+        android:textColor="@drawable/warna_10c6c8"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="16sp"
+        android:layout_marginRight="16sp"
+        android:layout_marginBottom="16sp"
+        />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_category"
@@ -64,6 +72,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="Kembali"></Button>
+        android:text="Kembali"
+        android:layout_margin="16dp"
+        android:background="@drawable/tombol_kembali"
+        android:textColor="#ffbd4a"
+        android:textSize="18sp"></Button>
 
 </RelativeLayout>
