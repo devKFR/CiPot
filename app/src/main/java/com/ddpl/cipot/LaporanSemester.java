@@ -19,7 +19,7 @@ public class LaporanSemester extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_laporan_semester_Inti);
+        setContentView(R.layout.activity_laporan_semester_inti);
 
         final TextView tvTahun = (TextView) findViewById(R.id.tv_tahunSemester);
         final TextView tvBerat = (TextView) findViewById(R.id.tv_beratBadan);
