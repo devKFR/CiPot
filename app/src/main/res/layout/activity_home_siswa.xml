@@ -20,8 +20,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:orientation="vertical"
-        android:background="@drawable/kotak_hijau">
+        android:background="@drawable/kotak_hijau"
+        android:orientation="vertical">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="100dp"
@@ -75,19 +75,22 @@
             android:textSize="22sp" />
 
         <Button
+            android:id="@+id/btn_laporanSiswa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="laporan semester"
             android:textColor="#90ae15"
             android:textSize="22sp" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="hasil akhir"
-            android:textColor="#90ae15"
-            android:textSize="22sp" />
-
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="logout"
+        android:textColor="#000000"
+        android:textSize="22sp" />
+
 </LinearLayout>
 

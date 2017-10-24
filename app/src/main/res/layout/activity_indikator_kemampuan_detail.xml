@@ -16,8 +16,8 @@
         android:textSize="22sp" />
 
     <SearchView
-        android:id="@+id/et_pencarian"
-        android:layout_width="match_parent"
+        android:id="@+id/search_indikator"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_kemampuanJudul" />
 
@@ -25,7 +25,7 @@
         android:id="@+id/el_kemampuan"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/et_pencarian">
+        android:layout_below="@id/search_indikator">
 
     </ExpandableListView>
 

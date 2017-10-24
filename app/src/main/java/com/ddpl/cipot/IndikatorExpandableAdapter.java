@@ -19,6 +19,7 @@ public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
 
     private Context _context;
     private List<String> _listDataHeader; // header titles
+    private List<String> originalList;
     // child data in format of header title, child title
     private HashMap<String, List<String>> _listDataChild;
 
@@ -107,5 +108,4 @@ public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
     public boolean isChildSelectable(int groupPosition, int childPosition) {
         return true;
     }
-
 }

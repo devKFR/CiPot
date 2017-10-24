@@ -34,10 +34,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if (firebaseAuth.getCurrentUser() != null) {
-                    Intent login = new Intent(MainActivity.this, HomeSiswaActivity.class);
-                    login.putExtra(HomeSiswaActivity.Nama, ID);
-                    login.putExtra(HomeSiswaActivity.upDate, date);
-                    startActivity(login);
+                    if (ID.equals("1")) {
+                        Intent login = new Intent(MainActivity.this, HomeSiswaActivity.class);
+                        login.putExtra(HomeSiswaActivity.Nama, ID);
+                        login.putExtra(HomeSiswaActivity.upDate, date);
+                        startActivity(login);
+                    }
+                    if (ID.equals("2")) {
+                        Intent login = new Intent(MainActivity.this, HomeGuruActivity.class);
+                        login.putExtra(HomeGuruActivity.Nama, ID);
+                        login.putExtra(HomeGuruActivity.upDate, date);
+                        startActivity(login);
+                    }
                 }
             }
         };
@@ -66,10 +74,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void loginFirebase() {
         ID = edt_noInduk.getText().toString().trim();
         date = edt_tanggal.getText().toString().trim();
-
-        if (TextUtils.isEmpty(ID) || TextUtils.isEmpty(date)) {
-
-        } else {
+        boolean isEmptyFields = false;
+        if (TextUtils.isEmpty(ID)) {
+            isEmptyFields = true;
+            edt_noInduk.setError("Masukkan nomor identitas");
+        }
+        if (TextUtils.isEmpty(date)) {
+            isEmptyFields = true;
+            edt_tanggal.setError("Masukkan tanggal lahir");
+        }
+        if (!isEmptyFields) {
             mAuth.signInWithEmailAndPassword(ID + "@a.com", date).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {

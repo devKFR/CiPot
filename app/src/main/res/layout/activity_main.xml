@@ -22,11 +22,11 @@
         android:layout_marginBottom="11dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
+        android:fontFamily="fonts/Montserrat-Regular.ttf"
         android:text="Pusat PADU Ciluk-Baa"
         android:textAlignment="center"
         android:textColor="#e76348"
         android:textSize="32sp"
-        android:fontFamily="fonts/Montserrat-Regular.ttf"
         />
 
     <TextView
@@ -53,10 +53,9 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginBottom="48dp"
             android:background="#ffbd4a"
             android:orientation="vertical">
 
