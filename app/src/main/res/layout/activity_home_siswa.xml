@@ -10,21 +10,21 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_marginTop="16dp"
         android:gravity="center_horizontal"
-        android:text="HALAMAN UTAMA"
-        android:textColor="#90ae15"
+        android:text="Halaman Utama"
+        android:textColor="#61771d"
         android:textSize="22sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:background="#90ae15"
+        android:layout_margin="16dp"
+        android:background="@drawable/kotak_hijau"
         android:orientation="vertical">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/foto_siswa"
+            android:id="@+id/iv_fotoSiswaProfil"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center_horizontal"
@@ -32,7 +32,7 @@
             android:src="@mipmap/logotrans" />
 
         <TextView
-            android:id="@+id/nama_siswa"
+            android:id="@+id/tv_namaSiswa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -42,10 +42,10 @@
             android:textSize="32sp" />
 
         <TextView
-            android:id="@+id/update"
+            android:id="@+id/tv_updateSiswa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_margin="0dp"
             android:gravity="center"
             android:text="Update Terakhir"
             android:textColor="#ffffff"
@@ -56,40 +56,55 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/btn_profilSiswa"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/tombol_atas"
             android:text="Profil siswa"
             android:textColor="#90ae15"
-            android:textSize="22sp" />
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/btn_indikatorSiswa"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/tombol_tengah"
             android:text="Indikator kemampuan"
             android:textColor="#90ae15"
-            android:textSize="22sp" />
+            android:textSize="18sp"
+            />
 
         <Button
-            android:id="@+id/btn_laporanSemester"
+            android:id="@+id/btn_laporanSiswa"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/tombol_bawah"
             android:text="laporan semester"
             android:textColor="#90ae15"
-            android:textSize="22sp" />
+            android:textSize="18sp" />
+
 
         <Button
-            android:id="@+id/btn_hasilAkhir"
+            android:id="@+id/btn_logout"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="hasil akhir"
-            android:textColor="#90ae15"
-            android:textSize="22sp" />
+            android:layout_marginTop="18dp"
+            android:background="@drawable/tombol_kembali"
+            android:text="logout"
+            android:textColor="#ffbd4a"
+            android:textSize="18sp" />
 
     </LinearLayout>
 </LinearLayout>

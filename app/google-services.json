@@ -8,12 +8,20 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:358614735905:android:3b6393926fde6b22",
+        "mobilesdk_app_id": "1:358614735905:android:3d6907fbeb198b32",
         "android_client_info": {
           "package_name": "com.ddpl.cipot"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "358614735905-i1r8tgiraoe4384mkj7g07fle0vah42q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ddpl.cipot",
+            "certificate_hash": "7da2885245cff1b2345f920d62c1b1d70622c86b"
+          }
+        },
         {
           "client_id": "358614735905-sauu8n079ent119jk0el8ehsglrlubfb.apps.googleusercontent.com",
           "client_type": 3

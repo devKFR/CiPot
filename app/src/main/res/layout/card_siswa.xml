@@ -11,26 +11,27 @@
     android:clickable="true"
     card_view:cardCornerRadius="20dp">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:orientation="vertical">
+        android:layout_height="100dp">
 
-        <ImageView
-            android:id="@+id/iv_indikator"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#323232" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_fotoSiswa"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="8dp"
+            android:src="@mipmap/logotrans" />
 
         <TextView
-            android:id="@+id/tv_indikator"
-            android:layout_width="match_parent"
+            android:id="@+id/tv_namaSiswa"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="2"
+            android:layout_alignParentLeft="true"
             android:gravity="center"
-            android:text="Indikator Kemampuan" />
+            android:text="Nama Siswa" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </android.support.v7.widget.CardView>
