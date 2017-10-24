@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#e7e7e7"
-    android:orientation="vertical"
     tools:context="com.ddpl.cipot.HomeSiswaActivity">
 
     <TextView
+        android:id="@+id/tv_halamanUtama"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -17,13 +17,16 @@
         android:textSize="22sp" />
 
     <LinearLayout
+        android:id="@+id/layout_profilGuru"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/tv_halamanUtama"
         android:layout_margin="8dp"
         android:background="@drawable/kotak_hijau"
         android:orientation="vertical">
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_fotoGuru"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center_horizontal"
@@ -31,7 +34,7 @@
             android:src="@mipmap/logotrans" />
 
         <TextView
-            android:id="@+id/nama_guru"
+            android:id="@+id/tv_namaGuru"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -41,7 +44,7 @@
             android:textSize="32sp" />
 
         <TextView
-            android:id="@+id/update"
+            android:id="@+id/tv_updateGuru"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
@@ -52,12 +55,28 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/tv_namaSiswaDitangani"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_profilGuru"
+        android:gravity="center"
+        android:text="Nama Siswa yang ditangani" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_namaSiswaDitangani"
+        android:scrollbars="vertical" />
+
     <Button
         android:id="@+id/btn_logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:text="logout"
         android:textColor="#000000"
         android:textSize="22sp" />
 
-</LinearLayout>
+</RelativeLayout>

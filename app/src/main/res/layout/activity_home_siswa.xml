@@ -24,6 +24,7 @@
         android:orientation="vertical">
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_fotoSiswaProfil"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center_horizontal"
@@ -31,7 +32,7 @@
             android:src="@mipmap/logotrans" />
 
         <TextView
-            android:id="@+id/nama_siswa"
+            android:id="@+id/tv_namaSiswa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -41,7 +42,7 @@
             android:textSize="32sp" />
 
         <TextView
-            android:id="@+id/update"
+            android:id="@+id/tv_updateSiswa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
@@ -61,49 +62,49 @@
 
         <Button
             android:id="@+id/btn_profilSiswa"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/tombol_atas"
             android:text="Profil siswa"
             android:textColor="#90ae15"
-            android:textSize="18sp"
-            android:background="@drawable/tombol_atas"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_marginTop="4dp"/>
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/btn_indikatorSiswa"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/tombol_tengah"
             android:text="Indikator kemampuan"
             android:textColor="#90ae15"
             android:textSize="18sp"
-            android:background="@drawable/tombol_tengah"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_marginTop="4dp"
             />
 
         <Button
             android:id="@+id/btn_laporanSiswa"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/tombol_bawah"
             android:text="laporan semester"
             android:textColor="#90ae15"
-            android:textSize="18sp"
-            android:background="@drawable/tombol_bawah"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_marginTop="4dp" />
+            android:textSize="18sp" />
 
 
         <Button
             android:id="@+id/btn_logout"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/tombol_kembali"
             android:text="logout"
             android:textColor="#ffbd4a"
-            android:textSize="18sp"
-            android:background="@drawable/tombol_kembali"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_marginTop="18dp"  />
+            android:textSize="18sp" />
 
     </LinearLayout>
 </LinearLayout>

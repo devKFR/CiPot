@@ -21,8 +21,8 @@ public class HomeSiswaActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_siswa);
 
-        tvNama = (TextView)findViewById(R.id.nama_siswa);
-        tvTanggal = (TextView)findViewById(R.id.update);
+        tvNama = (TextView) findViewById(R.id.tv_namaSiswa);
+        tvTanggal = (TextView) findViewById(R.id.tv_updateSiswa);
         btnProfil = (Button)findViewById(R.id.btn_profilSiswa);
         btnProfil.setOnClickListener(this);
         btnIndikator = (Button)findViewById(R.id.btn_indikatorSiswa);
@@ -35,7 +35,7 @@ public class HomeSiswaActivity extends AppCompatActivity implements View.OnClick
         String nama = getIntent().getStringExtra(Nama);
         String update = getIntent().getStringExtra(upDate);
 
-        tvNama.setText("Nama Siswa :"+nama);
+        tvNama.setText(nama);
         tvTanggal.setText("Update Terakhir :"+update);
     }
 
