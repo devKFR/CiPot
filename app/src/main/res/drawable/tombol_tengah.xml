@@ -6,6 +6,9 @@
             <padding android:bottom="18dp" android:left="18dp" android:right="18dp" android:top="18dp"></padding>
 
             <solid android:color="#c9c9c9"></solid>
+
+
+
         </shape>
     </item>
     <item android:state_focused="true">
@@ -14,6 +17,8 @@
             <padding android:bottom="18dp" android:left="18dp" android:right="18dp" android:top="18dp"></padding>
 
             <solid android:color="#c9c9c9"></solid>
+
+
         </shape>
     </item>
     <item>
@@ -22,6 +27,7 @@
             <padding android:bottom="18dp" android:left="18dp" android:right="18dp" android:top="18dp"></padding>
 
             <solid android:color="#d9d9d9"></solid>
+
         </shape>
     </item>
 </selector>
