@@ -258,16 +258,14 @@
 
     <Button
         android:id="@+id/btn_kembaliProfil"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:background="@drawable/tombol_kembali"
         android:text="Kembali"
         android:textColor="#ffbd4a"
-        android:textSize="18sp"
-        android:background="@drawable/tombol_kembali"
-        android:layout_margin="16dp"
-        style="?android:attr/borderlessButtonStyle"
-        >
-    </Button>
+        android:textSize="18sp"></Button>
 
 </RelativeLayout>

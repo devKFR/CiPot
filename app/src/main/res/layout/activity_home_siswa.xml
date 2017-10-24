@@ -80,8 +80,7 @@
             android:background="@drawable/tombol_tengah"
             android:text="Indikator kemampuan"
             android:textColor="#90ae15"
-            android:textSize="18sp"
-            />
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/btn_laporanSiswa"

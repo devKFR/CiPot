@@ -1,66 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_pressed="true" >
-        <shape
-            android:shape="rectangle"   >
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
 
-            <padding
-                android:left="18dp"
-                android:top="18dp"
-                android:right="18dp"
-                android:bottom="18dp"    >
-            </padding>
+            <padding android:bottom="18dp" android:left="18dp" android:right="18dp" android:top="18dp"></padding>
 
-            <solid
-                android:color="#a81d14" >
-            </solid>
+            <solid android:color="#a81d14"></solid>
 
-            <corners
-                android:radius="18dp"
-                >
-            </corners>
+            <corners android:radius="18dp"></corners>
         </shape>
     </item>
     <item android:state_focused="true">
-        <shape
-            android:shape="rectangle"   >
+        <shape android:shape="rectangle">
 
-            <padding
-                android:left="18dp"
-                android:top="18dp"
-                android:right="18dp"
-                android:bottom="18dp"    >
-            </padding>
+            <padding android:bottom="18dp" android:left="18dp" android:right="18dp" android:top="18dp"></padding>
 
-            <solid
-                android:color="#a81d14" >
-            </solid>
+            <solid android:color="#a81d14"></solid>
 
-            <corners
-                android:radius="18dp"
-                >
-            </corners>
+            <corners android:radius="18dp"></corners>
         </shape>
     </item>
-    <item >
-        <shape
-            android:shape="rectangle"   >
+    <item>
+        <shape android:shape="rectangle">
 
-            <padding
-                android:left="18dp"
-                android:top="18dp"
-                android:right="18dp"
-                android:bottom="18dp"    >
-            </padding>
+            <padding android:bottom="18dp" android:left="18dp" android:right="18dp" android:top="18dp"></padding>
 
-            <solid
-                android:color="#b82d24" >
-            </solid>
+            <solid android:color="#b82d24"></solid>
 
-            <corners
-                android:radius="18dp"
-                >
-            </corners>
+            <corners android:radius="18dp"></corners>
         </shape>
     </item>
 </selector>
