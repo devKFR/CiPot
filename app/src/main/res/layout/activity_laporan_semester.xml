@@ -9,10 +9,12 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#468890"
         android:gravity="center"
-        android:padding="20dp"
+        android:padding="10dp"
         android:text="Laporan Semester"
-        android:textSize="20sp" />
+        android:textColor="#ffffff"
+        android:textSize="22sp" />
 
     <Spinner
         android:id="@+id/sp_semester"
