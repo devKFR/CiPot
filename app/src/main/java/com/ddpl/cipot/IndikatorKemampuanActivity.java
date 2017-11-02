@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class IndikatorKemampuanActivity extends AppCompatActivity implements View.OnClickListener {
 
     private RecyclerView rvCategory;
-    private TextView tvJudul;
+    private TextView txtJudul;
     private Button btnKembali;
     private SearchView search;
 
@@ -23,7 +23,7 @@ public class IndikatorKemampuanActivity extends AppCompatActivity implements Vie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_indikator_kemampuan);
 
-        tvJudul = (TextView) findViewById(R.id.tv_indikatorJudul);
+        txtJudul = (TextView) findViewById(R.id.tv_indikatorJudul);
         btnKembali = (Button) findViewById(R.id.btn_kembaliIndikator);
         btnKembali.setOnClickListener(this);
 

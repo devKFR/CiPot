@@ -11,7 +11,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeSiswaActivity extends AppCompatActivity implements View.OnClickListener{
 
-    public static String Nama, upDate;
+    public static String Nama = "", upDate;
     private TextView tvNama, tvTanggal;
     private Button btnProfil, btnIndikator, btnLaporan, btnLogout;
 

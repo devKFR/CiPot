@@ -1,6 +1,7 @@
 package com.ddpl.cipot;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -18,8 +20,9 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText edt_noInduk, edt_tanggal;
-    private String ID, date;
+    private String ID = "", date;
     private Button btn_login;
+    private TextView txtPAUD, txtAlamat, txtSelamat;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
 
@@ -52,10 +55,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         edt_noInduk = (EditText)findViewById(R.id.nomor_induk);
         edt_tanggal = (EditText)findViewById(R.id.tanggal_lahir);
+        txtPAUD = (TextView) findViewById(R.id.txt_PusatPAUD);
+        txtAlamat = (TextView) findViewById(R.id.txt_Alamat);
+        txtSelamat = (TextView) findViewById(R.id.txt_SelamatDatang);
 
         btn_login = (Button)findViewById(R.id.btn_login);
         btn_login.setOnClickListener(this);
 
+        setFont();
+    }
+
+    private void setFont() {
+        String fontPath = "font/GOTHIC.TTF";
+        Typeface tf = Typeface.createFromAsset(getAssets(), fontPath);
+        txtPAUD.setTypeface(tf);
+        txtAlamat.setTypeface(tf);
+        txtSelamat.setTypeface(tf);
+        edt_noInduk.setTypeface(tf);
+        edt_tanggal.setTypeface(tf);
     }
 
     @Override

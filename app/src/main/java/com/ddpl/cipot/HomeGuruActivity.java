@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeGuruActivity extends AppCompatActivity implements View.OnClickListener {
 
-    public static String Nama, upDate;
+    public static String Nama = "", upDate;
     private RecyclerView rvCategory;
     private Button btnLogout;
     private TextView tvNama, tvTanggal;
