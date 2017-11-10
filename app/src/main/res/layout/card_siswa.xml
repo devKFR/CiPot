@@ -3,26 +3,18 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_gravity="center"
     android:layout_marginBottom="4dp"
-    android:layout_marginLeft="8dp"
-    android:layout_marginRight="8dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
     android:layout_marginTop="4dp"
+    card_view:cardElevation="0dp"
     android:clickable="true"
-    card_view:cardCornerRadius="20dp">
+    >
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp">
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/iv_fotoSiswa"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_alignParentRight="true"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="8dp"
-            android:src="@mipmap/logotrans" />
+        android:background="@drawable/tombol_tengah"
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/tv_namaSiswa"
@@ -30,8 +22,18 @@
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             android:gravity="center"
-            android:text="Nama Siswa" />
+            android:text="Nama Siswa"
+            android:textColor="#90ae15"
+            android:textSize="18sp" />
 
-    </RelativeLayout>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_fotoSiswa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="0dp"
+            android:src="@mipmap/logotrans" />
+
+    </LinearLayout>
 
 </android.support.v7.widget.CardView>
