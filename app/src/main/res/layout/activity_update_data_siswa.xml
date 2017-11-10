@@ -46,17 +46,17 @@
 
     <Button
         android:id="@+id/btn_tambahLaporan"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/layout_profilSiswa"
-        android:text="Tambah Laporan Semester"
-        style="?android:attr/borderlessButtonStyle"
-        android:background="@drawable/tombol_10c6c8"
-        android:textColor="@drawable/warna_10c6c8"
-        android:layout_marginTop="4dp"
+        android:layout_marginBottom="16sp"
         android:layout_marginLeft="16sp"
         android:layout_marginRight="16sp"
-        android:layout_marginBottom="16sp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/tombol_10c6c8"
+        android:text="Tambah Laporan Semester"
+        android:textColor="@drawable/warna_10c6c8"
         />
 
     <android.support.v7.widget.RecyclerView
@@ -68,13 +68,13 @@
         android:scrollbars="vertical" />
 
     <Button
-        android:id="@+id/btn_kembaliIndikator"
+        android:id="@+id/btn_kembaliUpdateDataSiswa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="Kembali"
         android:layout_margin="16dp"
         android:background="@drawable/tombol_kembali"
+        android:text="Kembali"
         android:textColor="#ffbd4a"
         android:textSize="18sp"></Button>
 
