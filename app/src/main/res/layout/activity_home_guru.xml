@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#e7e7e7"
-    android:orientation="vertical"
-    tools:context="com.ddpl.cipot.HomeGuruActivity">
+    tools:context="com.ddpl.cipot.GuruHomeActivity">
 
     <TextView
         android:id="@+id/tv_halamanUtama"
@@ -17,75 +16,82 @@
         android:textColor="#61771d"
         android:textSize="22sp" />
 
-    <LinearLayout
-        android:id="@+id/layout_profilGuru"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_halamanUtama"
-        android:layout_margin="16dp"
-        android:background="@drawable/kotak_hijau"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_halamanUtama">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/iv_fotoGuru"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="8dp"
-            android:src="@mipmap/logotrans" />
-
-        <TextView
-            android:id="@+id/tv_namaGuru"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:gravity="center"
-            android:text="Nama Guru"
-            android:textColor="#ffffff"
-            android:textSize="32sp" />
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv_updateGuru"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="0dp"
-            android:gravity="center"
-            android:text="Update Terakhir"
-            android:textColor="#ffffff"
-            android:textSize="20sp" />
+            <LinearLayout
+                android:id="@+id/layout_profilGuru"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/kotak_hijau"
+                android:orientation="vertical">
 
-    </LinearLayout>
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_fotoGuru"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="8dp"
+                    android:src="@mipmap/logotrans" />
 
-    <TextView
-        android:id="@+id/tv_namaSiswaDitangani"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/layout_profilGuru"
-        android:gravity="center"
-        android:text="NAMA SISWA YANG DITANGANI"
-        android:layout_marginTop="4dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:background="@drawable/tombol_atas"
-        android:textColor="#90ae15"
-        android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/tv_namaGuru"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:gravity="center"
+                    android:text="Nama Guru"
+                    android:textColor="#ffffff"
+                    android:textSize="32sp" />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_category"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_namaSiswaDitangani"
-        android:paddingBottom="18dp"
-        android:scrollbars="vertical" />
+                <TextView
+                    android:id="@+id/tv_updateGuru"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    android:gravity="center"
+                    android:text="Update Terakhir"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_namaSiswaDitangani"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/tombol_atas"
+                android:gravity="center"
+                android:text="NAMA SISWA YANG DITANGANI"
+                android:textColor="#90ae15"
+                android:textSize="18sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_category"
+                android:layout_width="match_parent"
+                android:layout_height="397dp"
+                android:layout_marginBottom="64dp"
+                android:scrollbars="vertical" />
+        </LinearLayout>
+    </ScrollView>
 
     <Button
         android:id="@+id/btn_logout"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/rv_category"
+        android:layout_alignParentBottom="true"
         android:background="@drawable/tombol_kembali"
         android:text="logout"
         android:textColor="#ffbd4a"

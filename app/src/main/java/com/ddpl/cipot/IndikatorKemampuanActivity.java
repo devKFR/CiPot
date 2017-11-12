@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -16,7 +15,6 @@ public class IndikatorKemampuanActivity extends AppCompatActivity implements Vie
     private RecyclerView rvCategory;
     private TextView txtJudul;
     private Button btnKembali;
-    private SearchView search;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,28 +29,28 @@ public class IndikatorKemampuanActivity extends AppCompatActivity implements Vie
         rvCategory.setHasFixedSize(true);
 
         rvCategory.setLayoutManager(new LinearLayoutManager(this));
-        final IndikatorAdapter cardViewAdapter = new IndikatorAdapter();
+        final IndikatorCardAdapter cardViewAdapter = new IndikatorCardAdapter();
         rvCategory.setAdapter(cardViewAdapter);
 
         ItemClickSupport.addTo(rvCategory).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
                 showSelected(cardViewAdapter, position);
-                Intent detailIndikator = new Intent(IndikatorKemampuanActivity.this, IndikatorKemampuanDetail.class);
-                detailIndikator.putExtra(IndikatorKemampuanDetail.hold, cardViewAdapter.text[position]);
+                Intent detailIndikator = new Intent(IndikatorKemampuanActivity.this, IndikatorKemampuanDetailActivity.class);
+                detailIndikator.putExtra(IndikatorKemampuanDetailActivity.hold, cardViewAdapter.text[position]);
                 startActivity(detailIndikator);
             }
         });
     }
 
-    private void showSelected(IndikatorAdapter adapter, int position) {
+    private void showSelected(IndikatorCardAdapter adapter, int position) {
         Toast.makeText(this, "Kamu memilih " + adapter.text[position], Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btn_kembaliIndikator) {
-            Intent back = new Intent(this, HomeSiswaActivity.class);
+            Intent back = new Intent(this, SiswaHomeActivity.class);
             back.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
             startActivityIfNeeded(back, 0);
         }

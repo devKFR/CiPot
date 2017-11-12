@@ -2,78 +2,52 @@ package com.ddpl.cipot;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
 
-import java.util.HashMap;
-import java.util.List;
+import java.util.ArrayList;
 
 /**
- * Created by user on 20/10/2017.
+ * Created by user on 10/11/2017.
  */
 
 public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
 
-    private Context _context;
-    private List<String> _listDataHeader; // header titles
-    private List<String> originalList;
-    // child data in format of header title, child title
-    private HashMap<String, List<String>> _listDataChild;
+    private Context context;
+    private ArrayList<IndikatorLv1> indikatorLv1List, originalList;
 
-    public IndikatorExpandableAdapter(Context context, List<String> listDataHeader,
-                                      HashMap<String, List<String>> listChildData) {
-        this._context = context;
-        this._listDataHeader = listDataHeader;
-        this._listDataChild = listChildData;
-    }
-
-    @Override
-    public Object getChild(int groupPosition, int childPosititon) {
-        return this._listDataChild.get(this._listDataHeader.get(groupPosition))
-                .get(childPosititon);
-    }
-
-    @Override
-    public long getChildId(int groupPosition, int childPosition) {
-        return childPosition;
-    }
-
-    @Override
-    public View getChildView(int groupPosition, final int childPosition,
-                             boolean isLastChild, View convertView, ViewGroup parent) {
-
-        final String childText = (String) getChild(groupPosition, childPosition);
-
-        if (convertView == null) {
-            LayoutInflater infalInflater = (LayoutInflater) this._context
-                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = infalInflater.inflate(R.layout.expandable_child, null);
-        }
-
-        TextView txtListChild = (TextView) convertView
-                .findViewById(R.id.tv_detailChild);
-
-        txtListChild.setText(childText);
-        return convertView;
-    }
-
-    @Override
-    public int getChildrenCount(int groupPosition) {
-        return this._listDataChild.get(this._listDataHeader.get(groupPosition))
-                .size();
-    }
-
-    @Override
-    public Object getGroup(int groupPosition) {
-        return this._listDataHeader.get(groupPosition);
+    public IndikatorExpandableAdapter(Context context, ArrayList<IndikatorLv1> indikatorLv1List) {
+        this.context = context;
+        this.indikatorLv1List = new ArrayList<>();
+        this.indikatorLv1List.addAll(indikatorLv1List);
+        this.originalList = new ArrayList<>();
+        this.originalList.addAll(indikatorLv1List);
     }
 
     @Override
     public int getGroupCount() {
-        return this._listDataHeader.size();
+        return indikatorLv1List.size();
+    }
+
+    @Override
+    public int getChildrenCount(int groupPosition) {
+        ArrayList<IndikatorLv2> indikatorLv2List = indikatorLv1List.get(groupPosition).getLv2List();
+        return indikatorLv2List.size();
+    }
+
+    @Override
+    public Object getGroup(int groupPosition) {
+        return indikatorLv1List.get(groupPosition);
+    }
+
+    @Override
+    public Object getChild(int groupPosition, int childPosition) {
+        ArrayList<IndikatorLv2> indikatorLv2List = indikatorLv1List.get(groupPosition).getLv2List();
+        return indikatorLv2List.get(childPosition);
     }
 
     @Override
@@ -82,30 +56,73 @@ public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
     }
 
     @Override
-    public View getGroupView(int groupPosition, boolean isExpanded,
-                             View convertView, ViewGroup parent) {
-        String headerTitle = (String) getGroup(groupPosition);
+    public long getChildId(int groupPosition, int childPosition) {
+        return childPosition;
+    }
+
+    @Override
+    public boolean hasStableIds() {
+        return true;
+    }
+
+    @Override
+    public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
+        IndikatorLv1 indikatorLv1 = (IndikatorLv1) getGroup(groupPosition);
         if (convertView == null) {
-            LayoutInflater infalInflater = (LayoutInflater) this._context
-                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = infalInflater.inflate(R.layout.expandable_header, null);
+            LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = layoutInflater.inflate(R.layout.expandable_header, null);
         }
 
-        TextView namaHeader = (TextView) convertView
-                .findViewById(R.id.tv_namaHeader);
-        namaHeader.setTypeface(null, Typeface.BOLD);
-        namaHeader.setText(headerTitle);
+        TextView heading = (TextView) convertView.findViewById(R.id.tv_namaHeader);
+        heading.setTypeface(null, Typeface.BOLD);
+        heading.setText(indikatorLv1.getNama().trim());
 
         return convertView;
     }
 
     @Override
-    public boolean hasStableIds() {
-        return false;
+    public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
+        IndikatorLv2 indikatorLv2 = (IndikatorLv2) getChild(groupPosition, childPosition);
+        if (convertView == null) {
+            LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = layoutInflater.inflate(R.layout.expandable_child, null);
+        }
+
+        TextView txtListChild = (TextView) convertView.findViewById(R.id.tv_detailChild);
+        txtListChild.setText(indikatorLv2.getNama().trim());
+
+        return convertView;
     }
 
     @Override
     public boolean isChildSelectable(int groupPosition, int childPosition) {
         return true;
+    }
+
+    public void filterData(String query) {
+        query = query.toLowerCase();
+        Log.v("MyListAdapter", String.valueOf(indikatorLv1List.size()));
+        indikatorLv1List.clear();
+
+        if (query.isEmpty()) {
+            indikatorLv1List.addAll(originalList);
+        } else {
+            for (IndikatorLv1 indikatorLv1 : originalList) {
+                ArrayList<IndikatorLv2> indikatorLv2List = indikatorLv1.getLv2List();
+                ArrayList<IndikatorLv2> newList = new ArrayList<>();
+                for (IndikatorLv2 indikatorLv2 : indikatorLv2List) {
+                    if (indikatorLv2.getID().toLowerCase().contains(query) || indikatorLv2.getNama().toLowerCase().contains(query)) {
+                        newList.add(indikatorLv2);
+                    }
+                }
+                if (newList.size() > 0) {
+                    IndikatorLv1 nIndikatorLv1 = new IndikatorLv1(indikatorLv1.getID(), indikatorLv1.getNama(), newList);
+                    indikatorLv1List.add(nIndikatorLv1);
+                }
+            }
+        }
+
+        Log.v("MyListAdapter", String.valueOf(indikatorLv1List.size()));
+        notifyDataSetChanged();
     }
 }

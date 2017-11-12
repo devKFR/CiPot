@@ -17,7 +17,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoginMainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText edt_noInduk, edt_tanggal;
     private String ID = "", date;
@@ -38,15 +38,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if (firebaseAuth.getCurrentUser() != null) {
                     if (ID.equals("1")) {
-                        Intent login = new Intent(MainActivity.this, HomeSiswaActivity.class);
-                        login.putExtra(HomeSiswaActivity.Nama, ID);
-                        login.putExtra(HomeSiswaActivity.upDate, date);
+                        Intent login = new Intent(LoginMainActivity.this, SiswaHomeActivity.class);
+                        login.putExtra(SiswaHomeActivity.Nama, ID);
+                        login.putExtra(SiswaHomeActivity.upDate, date);
                         startActivity(login);
                     }
                     if (ID.equals("2")) {
-                        Intent login = new Intent(MainActivity.this, HomeGuruActivity.class);
-                        login.putExtra(HomeGuruActivity.Nama, ID);
-                        login.putExtra(HomeGuruActivity.upDate, date);
+                        Intent login = new Intent(LoginMainActivity.this, GuruHomeActivity.class);
+                        login.putExtra(GuruHomeActivity.Nama, ID);
+                        login.putExtra(GuruHomeActivity.upDate, date);
                         startActivity(login);
                     }
                 }
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (!task.isSuccessful()) {
-                        Toast.makeText(MainActivity.this, "Profil tidak ditemukan, mohon cek kembali nomor identitas dan tanggal lahir", Toast.LENGTH_LONG).show();
+                        Toast.makeText(LoginMainActivity.this, "Profil tidak ditemukan, mohon cek kembali nomor identitas dan tanggal lahir", Toast.LENGTH_LONG).show();
                     }
                 }
             });
@@ -126,9 +126,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         if (!isEmptyFields) {
             if (ID.equals(date)) {
-                Intent login = new Intent(this, HomeSiswaActivity.class);
-                login.putExtra(HomeSiswaActivity.Nama, ID);
-                login.putExtra(HomeSiswaActivity.upDate, date);
+                Intent login = new Intent(this, SiswaHomeActivity.class);
+                login.putExtra(SiswaHomeActivity.Nama, ID);
+                login.putExtra(SiswaHomeActivity.upDate, date);
                 startActivity(login);
             } else {
                 Toast.makeText(this, "Profil tidak ditemukan, mohon cek kembali nomor identitas dan tanggal lahir", Toast.LENGTH_LONG).show();

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#e7e7e7"
-    tools:context="com.ddpl.cipot.ProfilSiswaActivity">
+    tools:context="com.ddpl.cipot.SiswaProfilActivity">
 
     <ScrollView
         android:layout_width="wrap_content"
@@ -20,26 +20,26 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/kotak_hijau"
                 android:layout_margin="16dp"
+                android:background="@drawable/kotak_hijau"
+                android:orientation="vertical"
                 android:padding="0dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
                     android:gravity="center"
                     android:text="Identitas Siswa"
                     android:textColor="#ffffff"
                     android:textSize="22dp"
-                    android:layout_margin="16dp"
                     />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/kotak_putih"
-                    android:padding="8dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="8dp">
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="100dp"
@@ -167,26 +167,26 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/kotak_61771d"
             android:layout_margin="16dp"
+            android:background="@drawable/kotak_61771d"
+            android:orientation="vertical"
             android:padding="0dp">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="16dp"
                 android:gravity="center"
                 android:text="Identitas Orang Tua"
                 android:textColor="#ffffff"
                 android:textSize="22dp"
-                android:layout_margin="16dp"
                 />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/kotak_putih"
-                android:padding="8dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="8dp">
                 <TableLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -265,11 +265,11 @@
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/tombol_kembali"
         android:text="Kembali"
         android:textColor="#ffbd4a"
-        android:textSize="18sp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"></Button>
+        android:textSize="18sp"></Button>
 
 </RelativeLayout>

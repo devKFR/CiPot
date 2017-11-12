@@ -7,12 +7,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class SiswaAdapter extends RecyclerView.Adapter<SiswaAdapter.CardViewHolder> {
+public class SiswaCardAdapter extends RecyclerView.Adapter<SiswaCardAdapter.CardViewHolder> {
 
     String[] text = new String[]{"Siswa A", "Siswa B", "Siswa C", "Siswa D"};
 
     @Override
-    public SiswaAdapter.CardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public SiswaCardAdapter.CardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_siswa, parent, false);
         return new CardViewHolder(view);
     }

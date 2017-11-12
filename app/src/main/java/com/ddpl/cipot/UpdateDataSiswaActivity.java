@@ -28,28 +28,28 @@ public class UpdateDataSiswaActivity extends AppCompatActivity implements View.O
         rvCategory.setHasFixedSize(true);
 
         rvCategory.setLayoutManager(new LinearLayoutManager(this));
-        final IndikatorAdapter cardViewAdapter = new IndikatorAdapter();
+        final IndikatorCardAdapter cardViewAdapter = new IndikatorCardAdapter();
         rvCategory.setAdapter(cardViewAdapter);
 
         ItemClickSupport.addTo(rvCategory).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
                 showSelected(cardViewAdapter, position);
-                /*Intent detailIndikator = new Intent(IndikatorKemampuanActivity.this, IndikatorKemampuanDetail.class);
-                detailIndikator.putExtra(IndikatorKemampuanDetail.hold, cardViewAdapter.text[position]);
+                /*Intent detailIndikator = new Intent(IndikatorKemampuanActivity.this, IndikatorKemampuanDetailActivity.class);
+                detailIndikator.putExtra(IndikatorKemampuanDetailActivity.hold, cardViewAdapter.text[position]);
                 startActivity(detailIndikator);*/
             }
         });
     }
 
-    private void showSelected(IndikatorAdapter adapter, int position) {
+    private void showSelected(IndikatorCardAdapter adapter, int position) {
         Toast.makeText(this, "Kamu memilih " + adapter.text[position], Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btn_kembaliUpdateDataSiswa) {
-            Intent back = new Intent(this, HomeGuruActivity.class);
+            Intent back = new Intent(this, GuruHomeActivity.class);
             back.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
             startActivityIfNeeded(back, 0);
         }

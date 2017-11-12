@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class ProfilSiswaActivity extends AppCompatActivity implements View.OnClickListener {
+public class SiswaProfilActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class ProfilSiswaActivity extends AppCompatActivity implements View.OnCli
 
     public void onClick(View v) {
         if (v.getId() == R.id.btn_kembaliProfil) {
-            Intent back = new Intent(this, HomeSiswaActivity.class);
+            Intent back = new Intent(this, SiswaHomeActivity.class);
             back.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
             startActivityIfNeeded(back, 0);
         }

@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class HomeSiswaActivity extends AppCompatActivity implements View.OnClickListener{
+public class SiswaHomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static String Nama = "", upDate;
     private TextView tvNama, tvTanggal;
@@ -41,7 +41,7 @@ public class HomeSiswaActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_profilSiswa:
-                Intent profil = new Intent(this, ProfilSiswaActivity.class);
+                Intent profil = new Intent(this, SiswaProfilActivity.class);
                 startActivity(profil);
                 break;
             case R.id.btn_indikatorSiswa:
@@ -49,12 +49,12 @@ public class HomeSiswaActivity extends AppCompatActivity implements View.OnClick
                 startActivity(indikator);
                 break;
             case R.id.btn_laporanSiswa:
-                Intent laporan = new Intent(this, LaporanSemester.class);
+                Intent laporan = new Intent(this, SiswaLaporanSemesterActivity.class);
                 startActivity(laporan);
                 break;
             case R.id.btn_logout:
                 FirebaseAuth.getInstance().signOut();
-                Intent back = new Intent(this, MainActivity.class);
+                Intent back = new Intent(this, LoginMainActivity.class);
                 back.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivityIfNeeded(back, 0);
                 break;

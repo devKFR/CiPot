@@ -11,12 +11,12 @@ import android.widget.TextView;
  * Created by user on 18/10/2017.
  */
 
-public class IndikatorAdapter extends RecyclerView.Adapter<IndikatorAdapter.CardViewHolder> {
+public class IndikatorCardAdapter extends RecyclerView.Adapter<IndikatorCardAdapter.CardViewHolder> {
 
     String[] text = new String[]{"Kemampuan A", "Kemampuan B", "Kemampuan C", "Kemampuan D"};
 
     @Override
-    public IndikatorAdapter.CardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public IndikatorCardAdapter.CardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_indikator, parent, false);
         return new CardViewHolder(view);
     }

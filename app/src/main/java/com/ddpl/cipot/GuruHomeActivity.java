@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class HomeGuruActivity extends AppCompatActivity implements View.OnClickListener {
+public class GuruHomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static String Nama = "", upDate;
     private RecyclerView rvCategory;
@@ -40,7 +40,7 @@ public class HomeGuruActivity extends AppCompatActivity implements View.OnClickL
         rvCategory.setNestedScrollingEnabled(false);
 
         rvCategory.setLayoutManager(new LinearLayoutManager(this));
-        final SiswaAdapter cardViewAdapter = new SiswaAdapter();
+        final SiswaCardAdapter cardViewAdapter = new SiswaCardAdapter();
         rvCategory.setAdapter(cardViewAdapter);
 
         ItemClickSupport.addTo(rvCategory).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
@@ -51,10 +51,10 @@ public class HomeGuruActivity extends AppCompatActivity implements View.OnClickL
         });
     }
 
-    private void showSelected(SiswaAdapter adapter, int position) {
+    private void showSelected(SiswaCardAdapter adapter, int position) {
         Toast.makeText(this, "Kamu memilih " + adapter.text[position], Toast.LENGTH_SHORT).show();
-        Intent updateData = new Intent(HomeGuruActivity.this, UpdateDataSiswaActivity.class);
-        //detailIndikator.putExtra(IndikatorKemampuanDetail.hold, cardViewAdapter.text[position]);
+        Intent updateData = new Intent(GuruHomeActivity.this, UpdateDataSiswaActivity.class);
+        updateData.putExtra(IndikatorKemampuanDetailActivity.hold, adapter.text[position]);
         startActivity(updateData);
     }
 
@@ -62,7 +62,7 @@ public class HomeGuruActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         if (v.getId() == R.id.btn_logout) {
             FirebaseAuth.getInstance().signOut();
-            Intent back = new Intent(this, MainActivity.class);
+            Intent back = new Intent(this, LoginMainActivity.class);
             back.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
             startActivityIfNeeded(back, 0);
         }

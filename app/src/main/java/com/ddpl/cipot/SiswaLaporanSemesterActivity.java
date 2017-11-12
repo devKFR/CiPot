@@ -9,7 +9,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class LaporanSemester extends AppCompatActivity {
+public class SiswaLaporanSemesterActivity extends AppCompatActivity {
 
     private Spinner spSemester;
     private String[] semester = {
@@ -35,7 +35,7 @@ public class LaporanSemester extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String semester = adapter.getItem(position);
-                Toast.makeText(LaporanSemester.this, "Selected " + adapter.getItem(position), Toast.LENGTH_SHORT).show();
+                Toast.makeText(SiswaLaporanSemesterActivity.this, "Selected " + adapter.getItem(position), Toast.LENGTH_SHORT).show();
                 tvTahun.setText(semester);
                 tvBerat.setText("Berat Badan Pada " + semester);
                 tvTinggi.setText("Tinggi Badan Pada " + semester);

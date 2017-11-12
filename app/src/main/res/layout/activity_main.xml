@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#e7e7e7"
     android:orientation="vertical"
-    tools:context="com.ddpl.cipot.MainActivity">
+    tools:context="com.ddpl.cipot.LoginMainActivity">
 
     <ImageView
         android:layout_width="100dp"

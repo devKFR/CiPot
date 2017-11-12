@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="#e7e7e7"
     android:orientation="vertical"
-    tools:context="com.ddpl.cipot.HomeSiswaActivity">
+    tools:context="com.ddpl.cipot.SiswaHomeActivity">
 
     <TextView
         android:layout_width="match_parent"
