@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class SiswaCardAdapter extends RecyclerView.Adapter<SiswaCardAdapter.CardViewHolder> {
 
-    String[] text = new String[]{"Siswa A", "Siswa B", "Siswa C", "Siswa D"};
+    String[] text = new String[]{"Siswa A", "Siswa B", "Siswa C", "Siswa D", "Siswa E", "Siswa F", "Siswa G", "Siswa H", "Siswa I"};
 
     @Override
     public SiswaCardAdapter.CardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

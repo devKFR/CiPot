@@ -49,6 +49,7 @@ public class IndikatorKemampuanDetailActivity extends AppCompatActivity implemen
                 return false;
             }
         });
+
     }
 
     private void expandAll() {
@@ -61,7 +62,6 @@ public class IndikatorKemampuanDetailActivity extends AppCompatActivity implemen
     private void displayList() {
         // display the list
         loadData();
-
         // get reference to the ExpandableListView
         expListView = (ExpandableListView) findViewById(R.id.el_kemampuan);
         // create the adapter by passing your ArrayList data

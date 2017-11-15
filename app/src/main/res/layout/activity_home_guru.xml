@@ -80,7 +80,7 @@
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv_category"
                 android:layout_width="match_parent"
-                android:layout_height="397dp"
+                android:layout_height="match_parent"
                 android:layout_marginBottom="64dp"
                 android:scrollbars="vertical" />
         </LinearLayout>
@@ -92,6 +92,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:background="@drawable/tombol_kembali"
         android:text="logout"
         android:textColor="#ffbd4a"

@@ -64,7 +64,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/btn_tambahLaporan"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="64dp"
         android:scrollbars="vertical" />
 
     <Button
@@ -72,10 +72,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_margin="16dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:background="@drawable/tombol_kembali"
         android:text="Kembali"
         android:textColor="#ffbd4a"
-        android:textSize="18sp"></Button>
+        android:textSize="18sp" />
 
 </RelativeLayout>

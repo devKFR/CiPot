@@ -6,10 +6,20 @@ package com.ddpl.cipot;
 
 public class IndikatorLv2 {
     private String ID = "", nama = "";
+    private boolean state = false;
 
     public IndikatorLv2(String ID, String nama) {
         this.ID = ID;
         this.nama = nama;
+        this.state = false;
+    }
+
+    public boolean isState() {
+        return state;
+    }
+
+    public void setState(boolean state) {
+        this.state = state;
     }
 
     public String getID() {

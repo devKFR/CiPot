@@ -7,7 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.CompoundButton;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import java.util.ArrayList;
 
@@ -19,6 +21,9 @@ public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
 
     private Context context;
     private ArrayList<IndikatorLv1> indikatorLv1List, originalList;
+
+    //private ToggleButton toggleButton0,toggleButton1,toggleButton2,toggleButton3;
+    //private TextView tvToogle0, tvToogle1, tvToogle2, tvToogle3;
 
     public IndikatorExpandableAdapter(Context context, ArrayList<IndikatorLv1> indikatorLv1List) {
         this.context = context;
@@ -89,7 +94,20 @@ public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
         }
 
         TextView txtListChild = (TextView) convertView.findViewById(R.id.tv_detailChild);
+        final TextView tvToogle0 = (TextView) convertView.findViewById(R.id.tv_toggle0);
         txtListChild.setText(indikatorLv2.getNama().trim());
+
+        final ToggleButton toggleButton0 = (ToggleButton) convertView.findViewById(R.id.toggle0);
+        toggleButton0.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    tvToogle0.setText("Check");
+                } else {
+                    tvToogle0.setText("Uncheck");
+                }
+            }
+        });
 
         return convertView;
     }
