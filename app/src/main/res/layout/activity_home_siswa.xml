@@ -102,7 +102,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
             android:background="@drawable/tombol_kembali"
-            android:text="logout"
+            android:text="LOGOUT"
             android:textColor="#ffbd4a"
             android:textSize="18sp" />
 

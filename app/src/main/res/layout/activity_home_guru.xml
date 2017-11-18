@@ -6,6 +6,7 @@
     android:background="#e7e7e7"
     tools:context="com.ddpl.cipot.GuruHomeActivity">
 
+
     <TextView
         android:id="@+id/tv_halamanUtama"
         android:layout_width="match_parent"

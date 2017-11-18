@@ -13,12 +13,13 @@
 
         <ToggleButton
             android:id="@+id/toggle0"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="50dp"
+            android:layout_height="75dp"
             android:layout_weight="1"
-            android:background="@mipmap/logotrans"
+            android:background="@drawable/circle_on"
+            android:textColor="#61771d"
 
-            android:textOff="" />
+            android:textOff="1" />
 
         <TextView
             android:id="@+id/tv_toggle0"
