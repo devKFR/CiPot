@@ -106,21 +106,18 @@ public class IndikatorKemampuanDetailActivity extends AppCompatActivity implemen
     @Override
     public boolean onClose() {
         indikatorExpandableAdapter.filterData("");
-        expandAll();
         return false;
     }
 
     @Override
     public boolean onQueryTextSubmit(String query) {
         indikatorExpandableAdapter.filterData(query);
-        expandAll();
         return false;
     }
 
     @Override
     public boolean onQueryTextChange(String newText) {
         indikatorExpandableAdapter.filterData(newText);
-        expandAll();
         return false;
     }
 }

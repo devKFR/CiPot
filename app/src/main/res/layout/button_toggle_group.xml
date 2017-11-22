@@ -1,107 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="wrap_content"
     android:orientation="horizontal">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical">
 
         <ToggleButton
             android:id="@+id/toggle0"
-            android:layout_width="50dp"
-            android:layout_height="75dp"
-            android:layout_weight="1"
-            android:background="@drawable/circle_on"
-            android:textColor="#61771d"
-
-            android:textOff="1" />
+            style="@style/toggleButton"
+            android:background="@drawable/bg_toggle"
+            android:textOff="1"
+            android:textOn="1" />
 
         <TextView
             android:id="@+id/tv_toggle0"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="2"
             android:gravity="center"
-            android:text="timestamp" />
+            android:text="-" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical">
 
         <ToggleButton
             android:id="@+id/toggle1"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-
-            />
+            style="@style/toggleButton"
+            android:background="@drawable/bg_toggle"
+            android:textOff="2"
+            android:textOn="2" />
 
         <TextView
             android:id="@+id/tv_toggle1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="2"
             android:gravity="center"
-            android:text="timestamp" />
+            android:text="-" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical">
 
         <ToggleButton
             android:id="@+id/toggle2"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clickable="false" />
+            style="@style/toggleButton"
+            android:background="@drawable/bg_toggle"
+            android:textOff="3"
+            android:textOn="3" />
 
         <TextView
             android:id="@+id/tv_toggle2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="2"
             android:clickable="false"
             android:gravity="center"
-            android:text="timestamp" />
+            android:text="-" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical">
 
         <ToggleButton
             android:id="@+id/toggle3"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:clickable="false" />
+            style="@style/toggleButton"
+            android:background="@drawable/bg_toggle"
+            android:textOff="4"
+            android:textOn="4" />
 
         <TextView
             android:id="@+id/tv_toggle3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="2"
             android:gravity="center"
-            android:text="timestamp" />
+            android:text="-" />
 
     </LinearLayout>
 

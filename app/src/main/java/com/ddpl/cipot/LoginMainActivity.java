@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginMainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    public static String login = "";
     private EditText edt_noInduk, edt_tanggal;
     private String ID = "", date;
     private Button btn_login;
@@ -38,12 +39,14 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if (firebaseAuth.getCurrentUser() != null) {
                     if (ID.equals("1")) {
+                        login = "Siswa";
                         Intent login = new Intent(LoginMainActivity.this, SiswaHomeActivity.class);
                         login.putExtra(SiswaHomeActivity.Nama, ID);
                         login.putExtra(SiswaHomeActivity.upDate, date);
                         startActivity(login);
                     }
                     if (ID.equals("2")) {
+                        login = "Guru";
                         Intent login = new Intent(LoginMainActivity.this, GuruHomeActivity.class);
                         login.putExtra(GuruHomeActivity.Nama, ID);
                         login.putExtra(GuruHomeActivity.upDate, date);

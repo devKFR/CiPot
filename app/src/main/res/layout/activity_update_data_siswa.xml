@@ -6,78 +6,91 @@
     android:background="#e7e7e7"
     tools:context="com.ddpl.cipot.UpdateDataSiswaActivity">
 
-    <LinearLayout
-        android:id="@+id/layout_profilSiswa"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:background="@drawable/kotak_61771d"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/iv_fotoSiswaProfil"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="8dp"
-            android:src="@mipmap/logotrans" />
-
-        <TextView
-            android:id="@+id/tv_namaSiswa"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:gravity="center"
-            android:text="Nama Siswa"
-            android:textColor="#ffffff"
-            android:textSize="32sp" />
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv_updateSiswa"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="0dp"
-            android:gravity="center"
-            android:text="Update Terakhir"
-            android:textColor="#ffffff"
-            android:textSize="20sp" />
+            <LinearLayout
+                android:id="@+id/layout_profilSiswa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/kotak_61771d"
+                android:orientation="vertical">
 
-    </LinearLayout>
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_fotoSiswaProfil"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="8dp"
+                    android:src="@mipmap/logotrans" />
 
-    <Button
-        android:id="@+id/btn_tambahLaporan"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/layout_profilSiswa"
-        android:layout_marginBottom="16sp"
-        android:layout_marginLeft="16sp"
-        android:layout_marginRight="16sp"
-        android:layout_marginTop="4dp"
-        android:background="@drawable/tombol_10c6c8"
-        android:text="Tambah Laporan Semester"
-        android:textColor="@drawable/warna_10c6c8"
-        />
+                <TextView
+                    android:id="@+id/tv_namaSiswa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:gravity="center"
+                    android:text="Nama Siswa"
+                    android:textColor="#ffffff"
+                    android:textSize="32sp" />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_category"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btn_tambahLaporan"
-        android:layout_marginBottom="64dp"
-        android:scrollbars="vertical" />
+                <TextView
+                    android:id="@+id/tv_updateSiswa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    android:gravity="center"
+                    android:text="Update Terakhir"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/btn_kembaliUpdateDataSiswa"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:background="@drawable/tombol_kembali"
-        android:text="Kembali"
-        android:textColor="#ffbd4a"
-        android:textSize="18sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_tambahLaporan"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_profilSiswa"
+                android:layout_marginBottom="16sp"
+                android:layout_marginLeft="16sp"
+                android:layout_marginRight="16sp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/tombol_10c6c8"
+                android:text="Tambah Laporan Semester"
+                android:textColor="@drawable/warna_10c6c8"
+                android:visibility="gone" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_tambahLaporan"
+                android:scrollbars="vertical" />
+
+            <Button
+                android:id="@+id/btn_kembaliUpdateDataSiswa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/tombol_kembali"
+                android:text="Kembali"
+                android:textColor="#ffbd4a"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
 
 </RelativeLayout>

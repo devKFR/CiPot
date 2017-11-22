@@ -35,9 +35,9 @@ public class UpdateDataSiswaActivity extends AppCompatActivity implements View.O
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
                 showSelected(cardViewAdapter, position);
-                /*Intent detailIndikator = new Intent(IndikatorKemampuanActivity.this, IndikatorKemampuanDetailActivity.class);
+                Intent detailIndikator = new Intent(UpdateDataSiswaActivity.this, IndikatorKemampuanDetailActivity.class);
                 detailIndikator.putExtra(IndikatorKemampuanDetailActivity.hold, cardViewAdapter.text[position]);
-                startActivity(detailIndikator);*/
+                startActivity(detailIndikator);
             }
         });
     }

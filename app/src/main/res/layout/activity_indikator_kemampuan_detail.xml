@@ -27,9 +27,23 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/search_indikator"
+        android:layout_marginBottom="80dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp">
 
     </ExpandableListView>
+
+    <Button
+        android:id="@+id/btn_kembaliIndikatorDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/tombol_kembali"
+        android:text="Kembali"
+        android:textColor="#ffbd4a"
+        android:textSize="18sp" />
 
 </RelativeLayout>

@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:background="@drawable/kotak_dca340"
-            android:hint="Nomor Induk"
+            android:hint="Nomor ID"
             android:inputType="number"
             android:textAlignment="center"
             android:textSize="22dp" />
@@ -83,7 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:background="@drawable/kotak_dca340"
-            android:hint="Tanggal Lahir"
+            android:hint="Password"
             android:inputType="number"
             android:textAlignment="center"
             android:textSize="22sp" />

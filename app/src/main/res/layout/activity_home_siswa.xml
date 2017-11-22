@@ -78,7 +78,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:background="@drawable/tombol_tengah"
+            android:background="@drawable/tombol_bawah"
             android:text="Indikator kemampuan"
             android:textColor="#90ae15"
             android:textSize="18sp" />
@@ -92,7 +92,8 @@
             android:background="@drawable/tombol_bawah"
             android:text="laporan semester"
             android:textColor="#90ae15"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:visibility="gone" />
 
 
         <Button
