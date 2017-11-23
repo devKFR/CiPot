@@ -2,9 +2,11 @@ package com.ddpl.cipot;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -16,7 +18,7 @@ import java.util.ArrayList;
  * Created by user on 10/11/2017.
  */
 
-public class IndikatorKemampuanDetailActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, SearchView.OnCloseListener {
+public class IndikatorKemampuanDetailActivity extends AppCompatActivity implements View.OnClickListener, SearchView.OnQueryTextListener, SearchView.OnCloseListener {
 
     public static String hold;
 
@@ -29,6 +31,9 @@ public class IndikatorKemampuanDetailActivity extends AppCompatActivity implemen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_indikator_kemampuan_detail);
+
+        Button btnkembali = (Button) findViewById(R.id.btn_kembaliIndikatorDetail);
+        btnkembali.setOnClickListener(this);
 
         TextView judul = (TextView) findViewById(R.id.tv_kemampuanJudul);
         judul.setText(getIntent().getStringExtra(hold));
@@ -50,6 +55,14 @@ public class IndikatorKemampuanDetailActivity extends AppCompatActivity implemen
             }
         });
 
+    }
+
+    public void onClick(View v) {
+        if (v.getId() == R.id.btn_kembaliIndikatorDetail) {
+            Intent back = new Intent(this, IndikatorKemampuanActivity.class);
+            back.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            startActivityIfNeeded(back, 0);
+        }
     }
 
     private void expandAll() {

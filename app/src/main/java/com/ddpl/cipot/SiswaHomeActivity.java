@@ -1,6 +1,7 @@
 package com.ddpl.cipot;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -12,7 +13,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class SiswaHomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static String Nama = "", upDate;
-    private TextView tvNama, tvTanggal;
+    private TextView tvNama, tvTanggal, tvHome;
     private Button btnProfil, btnIndikator, btnLaporan, btnLogout;
 
     @Override
@@ -22,6 +23,7 @@ public class SiswaHomeActivity extends AppCompatActivity implements View.OnClick
 
         tvNama = (TextView) findViewById(R.id.tv_namaSiswa);
         tvTanggal = (TextView) findViewById(R.id.tv_updateSiswa);
+        tvHome = (TextView) findViewById(R.id.txt_HalamanHome);
         btnProfil = (Button)findViewById(R.id.btn_profilSiswa);
         btnProfil.setOnClickListener(this);
         btnIndikator = (Button)findViewById(R.id.btn_indikatorSiswa);
@@ -35,6 +37,20 @@ public class SiswaHomeActivity extends AppCompatActivity implements View.OnClick
         String update = getIntent().getStringExtra(upDate);
         tvNama.setText(nama);
         tvTanggal.setText("Update Terakhir :"+update);
+
+        setFont();
+    }
+
+    private void setFont() {
+        String fontPath = "font/DidactGothic-Regular.ttf";
+        Typeface tf = Typeface.createFromAsset(getAssets(), fontPath);
+        tvNama.setTypeface(tf);
+        tvTanggal.setTypeface(tf);
+        tvHome.setTypeface(tf);
+        btnProfil.setTypeface(tf);
+        btnIndikator.setTypeface(tf);
+        btnLaporan.setTypeface(tf);
+        btnLogout.setTypeface(tf);
     }
 
     @Override

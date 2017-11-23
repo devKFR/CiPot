@@ -59,7 +59,7 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
         edt_noInduk = (EditText)findViewById(R.id.nomor_induk);
         edt_tanggal = (EditText)findViewById(R.id.tanggal_lahir);
         txtPAUD = (TextView) findViewById(R.id.txt_PusatPAUD);
-        txtAlamat = (TextView) findViewById(R.id.txt_Alamat);
+        txtAlamat = (TextView) findViewById(R.id.txt_AlamatPAUD);
         txtSelamat = (TextView) findViewById(R.id.txt_SelamatDatang);
 
         btn_login = (Button)findViewById(R.id.btn_login);
@@ -69,7 +69,7 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void setFont() {
-        String fontPath = "font/GOTHIC.TTF";
+        String fontPath = "font/DidactGothic-Regular.ttf";
         Typeface tf = Typeface.createFromAsset(getAssets(), fontPath);
         txtPAUD.setTypeface(tf);
         txtAlamat.setTypeface(tf);
