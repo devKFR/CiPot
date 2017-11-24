@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginMainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    public static String login = "";
+    public static String login = "", fontPath = "font/DidactGothic-Regular.ttf";
     private EditText edt_noInduk, edt_tanggal;
     private String ID = "", date;
     private Button btn_login;
@@ -69,13 +69,13 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void setFont() {
-        String fontPath = "font/DidactGothic-Regular.ttf";
         Typeface tf = Typeface.createFromAsset(getAssets(), fontPath);
         txtPAUD.setTypeface(tf);
         txtAlamat.setTypeface(tf);
         txtSelamat.setTypeface(tf);
         edt_noInduk.setTypeface(tf);
         edt_tanggal.setTypeface(tf);
+        btn_login.setTypeface(tf);
     }
 
     @Override

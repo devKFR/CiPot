@@ -1,6 +1,7 @@
 package com.ddpl.cipot;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -21,7 +22,7 @@ public class IndikatorKemampuanActivity extends AppCompatActivity implements Vie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_indikator_kemampuan);
 
-        txtJudul = (TextView) findViewById(R.id.tv_indikatorJudul);
+        txtJudul = (TextView) findViewById(R.id.txt_indikatorKemampuan);
         btnKembali = (Button) findViewById(R.id.btn_kembaliIndikator);
         btnKembali.setOnClickListener(this);
 
@@ -41,6 +42,16 @@ public class IndikatorKemampuanActivity extends AppCompatActivity implements Vie
                 startActivity(detailIndikator);
             }
         });
+
+        setFont();
+    }
+
+    private void setFont() {
+        String fontPath = LoginMainActivity.fontPath;
+        Typeface tf = Typeface.createFromAsset(getAssets(), fontPath);
+        btnKembali.setTypeface(tf);
+        txtJudul.setTypeface(tf);
+
     }
 
     private void showSelected(IndikatorCardAdapter adapter, int position) {

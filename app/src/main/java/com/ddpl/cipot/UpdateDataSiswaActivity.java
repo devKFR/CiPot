@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 public class UpdateDataSiswaActivity extends AppCompatActivity implements View.OnClickListener {
 
+    public static String namaSiswaUpdate;
     private RecyclerView rvCategory;
     private Button btnTambahLaporan, btnKembali;
     private TextView tvNama, tvTanggal;
@@ -20,6 +21,11 @@ public class UpdateDataSiswaActivity extends AppCompatActivity implements View.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_data_siswa);
+
+        String namaSiswa = getIntent().getStringExtra(namaSiswaUpdate);
+
+        tvNama = (TextView) findViewById(R.id.tv_namaSiswaUpdate);
+        tvNama.setText(namaSiswa);
 
         btnKembali = (Button) findViewById(R.id.btn_kembaliUpdateDataSiswa);
         btnKembali.setOnClickListener(this);

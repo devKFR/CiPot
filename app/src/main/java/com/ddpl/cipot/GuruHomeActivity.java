@@ -1,6 +1,7 @@
 package com.ddpl.cipot;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -17,7 +18,7 @@ public class GuruHomeActivity extends AppCompatActivity implements View.OnClickL
     public static String Nama = "", upDate;
     private RecyclerView rvCategory;
     private Button btnLogout;
-    private TextView tvNama, tvTanggal;
+    private TextView tvNama, tvTanggal, txtHalamanUtama, txtNamaSiswaTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,8 @@ public class GuruHomeActivity extends AppCompatActivity implements View.OnClickL
 
         tvNama = (TextView) findViewById(R.id.tv_namaGuru);
         tvTanggal = (TextView) findViewById(R.id.tv_updateGuru);
+        txtHalamanUtama = (TextView) findViewById(R.id.txt_halamanUtamaGuru);
+        txtNamaSiswaTitle = (TextView) findViewById(R.id.txt_namaSiswaDitangani);
         btnLogout = (Button) findViewById(R.id.btn_logout);
         btnLogout.setOnClickListener(this);
 
@@ -40,7 +43,7 @@ public class GuruHomeActivity extends AppCompatActivity implements View.OnClickL
         rvCategory.setNestedScrollingEnabled(false);
 
         rvCategory.setLayoutManager(new LinearLayoutManager(this));
-        final SiswaCardAdapter cardViewAdapter = new SiswaCardAdapter();
+        final SiswaCardAdapter cardViewAdapter = new SiswaCardAdapter(this);
         rvCategory.setAdapter(cardViewAdapter);
 
         ItemClickSupport.addTo(rvCategory).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
@@ -49,12 +52,24 @@ public class GuruHomeActivity extends AppCompatActivity implements View.OnClickL
                 showSelected(cardViewAdapter, position);
             }
         });
+
+        setFont();
     }
+
+    private void setFont() {
+        String fontPath = LoginMainActivity.fontPath;
+        Typeface tf = Typeface.createFromAsset(getAssets(), fontPath);
+        tvNama.setTypeface(tf);
+        tvTanggal.setTypeface(tf);
+        txtHalamanUtama.setTypeface(tf);
+        btnLogout.setTypeface(tf);
+    }
+
 
     private void showSelected(SiswaCardAdapter adapter, int position) {
         Toast.makeText(this, "Kamu memilih " + adapter.text[position], Toast.LENGTH_SHORT).show();
         Intent updateData = new Intent(GuruHomeActivity.this, UpdateDataSiswaActivity.class);
-        updateData.putExtra(IndikatorKemampuanDetailActivity.hold, adapter.text[position]);
+        updateData.putExtra(UpdateDataSiswaActivity.namaSiswaUpdate, adapter.text[position]);
         startActivity(updateData);
     }
 

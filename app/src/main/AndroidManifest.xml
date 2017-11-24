@@ -19,7 +19,9 @@
         <activity android:name=".SiswaHomeActivity" />
         <activity android:name=".SiswaProfilActivity" />
         <activity android:name=".IndikatorKemampuanActivity" />
-        <activity android:name=".IndikatorKemampuanDetailActivity" />
+        <activity
+            android:name=".IndikatorKemampuanDetailActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
         <activity android:name=".SiswaLaporanSemesterActivity" />
         <activity android:name=".GuruHomeActivity" />
         <activity android:name=".UpdateDataSiswaActivity"></activity>

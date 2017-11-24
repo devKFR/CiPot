@@ -59,9 +59,15 @@ public class IndikatorKemampuanDetailActivity extends AppCompatActivity implemen
 
     public void onClick(View v) {
         if (v.getId() == R.id.btn_kembaliIndikatorDetail) {
-            Intent back = new Intent(this, IndikatorKemampuanActivity.class);
-            back.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-            startActivityIfNeeded(back, 0);
+            if (LoginMainActivity.login.equals("Siswa")) {
+                Intent back = new Intent(this, IndikatorKemampuanActivity.class);
+                back.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivityIfNeeded(back, 0);
+            } else {
+                Intent back = new Intent(this, UpdateDataSiswaActivity.class);
+                back.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivityIfNeeded(back, 0);
+            }
         }
     }
 

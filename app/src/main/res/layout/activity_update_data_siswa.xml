@@ -32,7 +32,7 @@
                     android:src="@mipmap/logotrans" />
 
                 <TextView
-                    android:id="@+id/tv_namaSiswa"
+                    android:id="@+id/tv_namaSiswaUpdate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"

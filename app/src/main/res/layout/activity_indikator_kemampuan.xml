@@ -7,7 +7,7 @@
     tools:context="com.ddpl.cipot.IndikatorKemampuanActivity">
 
     <TextView
-        android:id="@+id/tv_indikatorJudul"
+        android:id="@+id/txt_indikatorKemampuan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#f5a61f"
@@ -20,7 +20,7 @@
         android:id="@+id/rv_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_indikatorJudul"
+        android:layout_below="@id/txt_indikatorKemampuan"
         android:layout_marginBottom="80dp"
         android:scrollbars="vertical" />
 

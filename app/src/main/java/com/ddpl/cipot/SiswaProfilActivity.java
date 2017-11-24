@@ -17,14 +17,15 @@ public class SiswaProfilActivity extends AppCompatActivity implements View.OnCli
             txt_IdentitasOrangtua, txt_NamaAyah, tv_namaAyah, txt_NamaIbu, tv_namaIbu,
             txt_PekerjaanAyah, tv_pekerjaanAyah, txt_PekerjaanIbu, tv_pekerjaanIbu,
             txt_Alamat, tv_alamat;
+    Button btnKembali;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil_siswa);
 
-        Button btnkembali = (Button) findViewById(R.id.btn_kembaliProfil);
-        btnkembali.setOnClickListener(this);
+        btnKembali = (Button) findViewById(R.id.btn_kembaliProfil);
+        btnKembali.setOnClickListener(this);
 
         txt_Agama = (TextView) findViewById(R.id.txt_Agama);
         tv_agama = (TextView) findViewById(R.id.tv_agama);
@@ -61,37 +62,38 @@ public class SiswaProfilActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void setFont() {
-        String fontPath = "font/DidactGothic-Regular.ttf";
+        String fontPath = LoginMainActivity.fontPath;
         Typeface tf = Typeface.createFromAsset(getAssets(), fontPath);
-        txt_Agama.setTypeface(tf);
+        btnKembali.setTypeface(tf);
+        txt_Agama.setTypeface(tf, Typeface.BOLD);
         tv_agama.setTypeface(tf);
-        txt_Alamat.setTypeface(tf);
+        txt_Alamat.setTypeface(tf, Typeface.BOLD);
         tv_alamat.setTypeface(tf);
-        txt_AnakKe.setTypeface(tf);
+        txt_AnakKe.setTypeface(tf, Typeface.BOLD);
         tv_anakKe.setTypeface(tf);
-        txt_IdentitasOrangtua.setTypeface(tf);
-        txt_IdentitasSiswa.setTypeface(tf);
-        txt_JenisKelamin.setTypeface(tf);
+        txt_IdentitasOrangtua.setTypeface(tf, Typeface.BOLD);
+        txt_IdentitasSiswa.setTypeface(tf, Typeface.BOLD);
+        txt_JenisKelamin.setTypeface(tf, Typeface.BOLD);
         tv_jenisKelamin.setTypeface(tf);
-        txt_JumlahSaudara.setTypeface(tf);
+        txt_JumlahSaudara.setTypeface(tf, Typeface.BOLD);
         tv_jumlahSaudara.setTypeface(tf);
-        txt_NamaAyah.setTypeface(tf);
+        txt_NamaAyah.setTypeface(tf, Typeface.BOLD);
         tv_namaAyah.setTypeface(tf);
-        txt_NamaIbu.setTypeface(tf);
+        txt_NamaIbu.setTypeface(tf, Typeface.BOLD);
         tv_namaIbu.setTypeface(tf);
-        txt_NamaLengkap.setTypeface(tf);
+        txt_NamaLengkap.setTypeface(tf, Typeface.BOLD);
         tv_namaLengkap.setTypeface(tf);
-        txt_NamaPanggilan.setTypeface(tf);
+        txt_NamaPanggilan.setTypeface(tf, Typeface.BOLD);
         tv_namaPanggilan.setTypeface(tf);
-        txt_NomorAkta.setTypeface(tf);
+        txt_NomorAkta.setTypeface(tf, Typeface.BOLD);
         tv_nomorAkta.setTypeface(tf);
-        txt_PekerjaanAyah.setTypeface(tf);
+        txt_PekerjaanAyah.setTypeface(tf, Typeface.BOLD);
         tv_pekerjaanAyah.setTypeface(tf);
-        txt_PekerjaanIbu.setTypeface(tf);
+        txt_PekerjaanIbu.setTypeface(tf, Typeface.BOLD);
         tv_pekerjaanIbu.setTypeface(tf);
-        txt_TanggalLahir.setTypeface(tf);
+        txt_TanggalLahir.setTypeface(tf, Typeface.BOLD);
         tv_tanggalLahir.setTypeface(tf);
-        txt_TempatLahir.setTypeface(tf);
+        txt_TempatLahir.setTypeface(tf, Typeface.BOLD);
         tv_tempatLahir.setTypeface(tf);
     }
 

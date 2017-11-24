@@ -8,12 +8,13 @@
     android:clickable="true">
 
     <RelativeLayout
+        android:id="@+id/card_siswa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/tombol_tengah">
 
         <TextView
-            android:id="@+id/tv_namaSiswa"
+            android:id="@+id/tv_namaSiswaUpdate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"

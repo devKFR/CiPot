@@ -21,7 +21,7 @@ public class SiswaHomeActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_siswa);
 
-        tvNama = (TextView) findViewById(R.id.tv_namaSiswa);
+        tvNama = (TextView) findViewById(R.id.tv_namaSiswaUpdate);
         tvTanggal = (TextView) findViewById(R.id.tv_updateSiswa);
         tvHome = (TextView) findViewById(R.id.txt_HalamanHome);
         btnProfil = (Button)findViewById(R.id.btn_profilSiswa);
@@ -42,7 +42,7 @@ public class SiswaHomeActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void setFont() {
-        String fontPath = "font/DidactGothic-Regular.ttf";
+        String fontPath = LoginMainActivity.fontPath;
         Typeface tf = Typeface.createFromAsset(getAssets(), fontPath);
         tvNama.setTypeface(tf);
         tvTanggal.setTypeface(tf);
