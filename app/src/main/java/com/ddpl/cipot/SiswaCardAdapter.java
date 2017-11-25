@@ -2,6 +2,7 @@ package com.ddpl.cipot;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,11 +24,13 @@ public class SiswaCardAdapter extends RecyclerView.Adapter<SiswaCardAdapter.Card
     @Override
     public SiswaCardAdapter.CardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_siswa, parent, false);
+
         return new CardViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(final CardViewHolder holder, int position) {
+        holder.cardViewSiswa.setUseCompatPadding(false);
         holder.tvNamaSiswa.setText(text[position]);
         String fontPath = LoginMainActivity.fontPath;
         Typeface tf = Typeface.createFromAsset(context.getAssets(), fontPath);
@@ -47,12 +50,15 @@ public class SiswaCardAdapter extends RecyclerView.Adapter<SiswaCardAdapter.Card
         ImageView imgSiswa;
         TextView tvNamaSiswa;
         RelativeLayout cardSiswa;
+        CardView cardViewSiswa;
 
         public CardViewHolder(View v) {
             super(v);
             imgSiswa = (ImageView) v.findViewById(R.id.iv_fotoSiswa);
             tvNamaSiswa = (TextView) v.findViewById(R.id.tv_namaSiswaUpdate);
             cardSiswa = (RelativeLayout) v.findViewById(R.id.card_siswa);
+            cardViewSiswa = (CardView) v.findViewById(R.id.cardSiswa);
+            cardViewSiswa.setFocusable(false);
         }
     }
 }

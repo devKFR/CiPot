@@ -32,6 +32,7 @@ public class UpdateDataSiswaActivity extends AppCompatActivity implements View.O
 
         rvCategory = (RecyclerView) findViewById(R.id.rv_category);
         rvCategory.setHasFixedSize(true);
+        rvCategory.setFocusable(false);
 
         rvCategory.setLayoutManager(new LinearLayoutManager(this));
         final IndikatorCardAdapter cardViewAdapter = new IndikatorCardAdapter();

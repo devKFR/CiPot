@@ -41,6 +41,7 @@ public class GuruHomeActivity extends AppCompatActivity implements View.OnClickL
         rvCategory = (RecyclerView) findViewById(R.id.rv_category);
         rvCategory.setHasFixedSize(true);
         rvCategory.setNestedScrollingEnabled(false);
+        rvCategory.setFocusable(false);
 
         rvCategory.setLayoutManager(new LinearLayoutManager(this));
         final SiswaCardAdapter cardViewAdapter = new SiswaCardAdapter(this);
