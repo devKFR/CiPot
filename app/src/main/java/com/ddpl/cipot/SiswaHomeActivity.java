@@ -22,7 +22,7 @@ public class SiswaHomeActivity extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.activity_home_siswa);
 
         tvNama = (TextView) findViewById(R.id.tv_namaSiswaUpdate);
-        tvTanggal = (TextView) findViewById(R.id.tv_updateSiswa);
+        tvTanggal = (TextView) findViewById(R.id.tv_updateTerakhirSiswa);
         tvHome = (TextView) findViewById(R.id.txt_HalamanHome);
         btnProfil = (Button)findViewById(R.id.btn_profilSiswa);
         btnProfil.setOnClickListener(this);

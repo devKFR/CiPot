@@ -1,6 +1,7 @@
 package com.ddpl.cipot;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -22,10 +23,9 @@ public class UpdateDataSiswaActivity extends AppCompatActivity implements View.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_data_siswa);
 
-        String namaSiswa = getIntent().getStringExtra(namaSiswaUpdate);
-
         tvNama = (TextView) findViewById(R.id.tv_namaSiswaUpdate);
-        tvNama.setText(namaSiswa);
+        tvNama.setText(getIntent().getStringExtra(namaSiswaUpdate));
+        tvTanggal = (TextView) findViewById(R.id.tv_updateTerakhirSiswa);
 
         btnKembali = (Button) findViewById(R.id.btn_kembaliUpdateDataSiswa);
         btnKembali.setOnClickListener(this);
@@ -35,7 +35,7 @@ public class UpdateDataSiswaActivity extends AppCompatActivity implements View.O
         rvCategory.setFocusable(false);
 
         rvCategory.setLayoutManager(new LinearLayoutManager(this));
-        final IndikatorCardAdapter cardViewAdapter = new IndikatorCardAdapter();
+        final IndikatorCardAdapter cardViewAdapter = new IndikatorCardAdapter(this);
         rvCategory.setAdapter(cardViewAdapter);
 
         ItemClickSupport.addTo(rvCategory).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
@@ -47,6 +47,16 @@ public class UpdateDataSiswaActivity extends AppCompatActivity implements View.O
                 startActivity(detailIndikator);
             }
         });
+
+        setFont();
+    }
+
+    private void setFont() {
+        String fontPath = LoginMainActivity.fontPath;
+        Typeface tf = Typeface.createFromAsset(getAssets(), fontPath);
+        btnKembali.setTypeface(tf);
+        tvTanggal.setTypeface(tf);
+        tvNama.setTypeface(tf);
     }
 
     private void showSelected(IndikatorCardAdapter adapter, int position) {

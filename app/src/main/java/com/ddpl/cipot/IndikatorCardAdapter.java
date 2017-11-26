@@ -1,5 +1,7 @@
 package com.ddpl.cipot;
 
+import android.content.Context;
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +17,12 @@ public class IndikatorCardAdapter extends RecyclerView.Adapter<IndikatorCardAdap
 
     String[] text = new String[]{"Kemampuan A", "Kemampuan B", "Kemampuan C", "Kemampuan D"};
 
+    Context context;
+
+    public IndikatorCardAdapter(Context context) {
+        this.context = context;
+    }
+
     @Override
     public IndikatorCardAdapter.CardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_indikator, parent, false);
@@ -23,7 +31,10 @@ public class IndikatorCardAdapter extends RecyclerView.Adapter<IndikatorCardAdap
 
     @Override
     public void onBindViewHolder(final CardViewHolder holder, int position) {
+        String fontPath = LoginMainActivity.fontPath;
+        Typeface tf = Typeface.createFromAsset(context.getAssets(), fontPath);
         holder.tvIndikator.setText(text[position]);
+        holder.tvIndikator.setTypeface(tf);
     }
 
     @Override

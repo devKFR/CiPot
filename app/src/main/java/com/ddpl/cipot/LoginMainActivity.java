@@ -56,13 +56,13 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
             }
         };
 
-        edt_noInduk = (EditText)findViewById(R.id.nomor_induk);
-        edt_tanggal = (EditText)findViewById(R.id.tanggal_lahir);
+        edt_noInduk = (EditText) findViewById(R.id.nomor_induk);
+        edt_tanggal = (EditText) findViewById(R.id.tanggal_lahir);
         txtPAUD = (TextView) findViewById(R.id.txt_PusatPAUD);
         txtAlamat = (TextView) findViewById(R.id.txt_AlamatPAUD);
         txtSelamat = (TextView) findViewById(R.id.txt_SelamatDatang);
 
-        btn_login = (Button)findViewById(R.id.btn_login);
+        btn_login = (Button) findViewById(R.id.btn_login);
         btn_login.setOnClickListener(this);
 
         setFont();
@@ -80,7 +80,7 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
-        if(v.getId()==R.id.btn_login){
+        if (v.getId() == R.id.btn_login) {
             loginFirebase();
         }
     }
@@ -112,30 +112,6 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
                     }
                 }
             });
-        }
-    }
-
-    public void loginLama() {
-        boolean isEmptyFields = false;
-        ID = edt_noInduk.getText().toString().trim();
-        date = edt_tanggal.getText().toString().trim();
-        if (TextUtils.isEmpty(ID)) {
-            isEmptyFields = true;
-            edt_noInduk.setError("Masukkan nomor identitas");
-        }
-        if (TextUtils.isEmpty(date)) {
-            isEmptyFields = true;
-            edt_tanggal.setError("Masukkan tanggal lahir");
-        }
-        if (!isEmptyFields) {
-            if (ID.equals(date)) {
-                Intent login = new Intent(this, SiswaHomeActivity.class);
-                login.putExtra(SiswaHomeActivity.Nama, ID);
-                login.putExtra(SiswaHomeActivity.upDate, date);
-                startActivity(login);
-            } else {
-                Toast.makeText(this, "Profil tidak ditemukan, mohon cek kembali nomor identitas dan tanggal lahir", Toast.LENGTH_LONG).show();
-            }
         }
     }
 }

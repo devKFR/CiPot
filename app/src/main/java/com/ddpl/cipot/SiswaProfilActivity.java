@@ -8,25 +8,32 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+
 public class SiswaProfilActivity extends AppCompatActivity implements View.OnClickListener {
 
-    TextView txt_IdentitasSiswa, txt_NomorAkta, tv_nomorAkta, txt_NamaLengkap, tv_namaLengkap,
+    public static String namaSiswa = "";
+
+    private DatabaseReference mDatabase;
+
+    private TextView txt_IdentitasSiswa, txt_NomorAkta, tv_nomorAkta, txt_NamaLengkap, tv_namaLengkap,
             txt_NamaPanggilan, tv_namaPanggilan, txt_TempatLahir, tv_tempatLahir,
             txt_TanggalLahir, tv_tanggalLahir, txt_JenisKelamin, tv_jenisKelamin,
             txt_Agama, tv_agama, txt_AnakKe, tv_anakKe, txt_JumlahSaudara, tv_jumlahSaudara,
             txt_IdentitasOrangtua, txt_NamaAyah, tv_namaAyah, txt_NamaIbu, tv_namaIbu,
             txt_PekerjaanAyah, tv_pekerjaanAyah, txt_PekerjaanIbu, tv_pekerjaanIbu,
             txt_Alamat, tv_alamat;
-    Button btnKembali;
+    private Button btnKembali;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil_siswa);
 
+        String Siswa = getIntent().getStringExtra(namaSiswa);
+
         btnKembali = (Button) findViewById(R.id.btn_kembaliProfil);
         btnKembali.setOnClickListener(this);
-
         txt_Agama = (TextView) findViewById(R.id.txt_Agama);
         tv_agama = (TextView) findViewById(R.id.tv_agama);
         txt_Alamat = (TextView) findViewById(R.id.txt_Alamat);

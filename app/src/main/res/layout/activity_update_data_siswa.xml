@@ -42,7 +42,7 @@
                     android:textSize="32sp" />
 
                 <TextView
-                    android:id="@+id/tv_updateSiswa"
+                    android:id="@+id/tv_updateTerakhirSiswa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="0dp"
@@ -83,6 +83,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/tombol_kembali"
                 android:text="Kembali"
                 android:textColor="#ffbd4a"

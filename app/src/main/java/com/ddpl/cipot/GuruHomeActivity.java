@@ -32,11 +32,8 @@ public class GuruHomeActivity extends AppCompatActivity implements View.OnClickL
         btnLogout = (Button) findViewById(R.id.btn_logout);
         btnLogout.setOnClickListener(this);
 
-        String nama = getIntent().getStringExtra(Nama);
-        String update = getIntent().getStringExtra(upDate);
-
-        tvNama.setText("Nama Guru :" + nama);
-        tvTanggal.setText("Update Terakhir :" + update);
+        tvNama.setText("Nama Guru :" + getIntent().getStringExtra(Nama));
+        tvTanggal.setText("Update Terakhir :" + getIntent().getStringExtra(upDate));
 
         rvCategory = (RecyclerView) findViewById(R.id.rv_category);
         rvCategory.setHasFixedSize(true);

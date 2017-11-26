@@ -11,6 +11,10 @@ public class IndikatorLv2 {
     public IndikatorLv2(String ID, String nama) {
         this.ID = ID;
         this.nama = nama;
+        this.state0 = isState0();
+        this.state1 = isState1();
+        this.state2 = isState2();
+        this.state3 = isState3();
     }
 
     public boolean isState1() {

@@ -30,7 +30,7 @@ public class IndikatorKemampuanActivity extends AppCompatActivity implements Vie
         rvCategory.setHasFixedSize(true);
 
         rvCategory.setLayoutManager(new LinearLayoutManager(this));
-        final IndikatorCardAdapter cardViewAdapter = new IndikatorCardAdapter();
+        final IndikatorCardAdapter cardViewAdapter = new IndikatorCardAdapter(this);
         rvCategory.setAdapter(cardViewAdapter);
 
         ItemClickSupport.addTo(rvCategory).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {

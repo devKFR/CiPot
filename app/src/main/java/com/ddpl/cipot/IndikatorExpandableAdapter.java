@@ -73,6 +73,9 @@ public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
 
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
+
+        String fontPath = LoginMainActivity.fontPath;
+        Typeface tf = Typeface.createFromAsset(context.getAssets(), fontPath);
         IndikatorLv1 indikatorLv1 = (IndikatorLv1) getGroup(groupPosition);
         if (convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -81,8 +84,8 @@ public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
 
         TextView heading = (TextView) convertView.findViewById(R.id.tv_namaHeader);
         TextView headingID = (TextView) convertView.findViewById(R.id.tv_idHeader);
-        heading.setTypeface(null, Typeface.BOLD);
-        headingID.setTypeface(null, Typeface.BOLD);
+        heading.setTypeface(tf, Typeface.BOLD);
+        headingID.setTypeface(tf, Typeface.BOLD);
         heading.setText(indikatorLv1.getNama().trim());
         headingID.setText(indikatorLv1.getID().trim());
 
@@ -91,6 +94,9 @@ public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
 
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
+
+        String fontPath = LoginMainActivity.fontPath;
+        Typeface tf = Typeface.createFromAsset(context.getAssets(), fontPath);
         final IndikatorLv2 indikatorLv2 = (IndikatorLv2) getChild(groupPosition, childPosition);
         if (convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -111,6 +117,10 @@ public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
         final TextView tvToogle1 = (TextView) convertView.findViewById(R.id.tv_toggle1);
         final TextView tvToogle2 = (TextView) convertView.findViewById(R.id.tv_toggle2);
         final TextView tvToogle3 = (TextView) convertView.findViewById(R.id.tv_toggle3);
+        tvToogle0.setTypeface(tf);
+        tvToogle1.setTypeface(tf);
+        tvToogle2.setTypeface(tf);
+        tvToogle3.setTypeface(tf);
 
         toggleButton0.setChecked(indikatorLv2.isState0());
         toggleButton1.setChecked(indikatorLv2.isState1());
@@ -124,7 +134,6 @@ public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     tvToogle0.setText(date);
-
                 } else {
                     tvToogle0.setText("-");
                 }
@@ -135,7 +144,6 @@ public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     tvToogle1.setText(date);
-
                 } else {
                     tvToogle1.setText("-");
                 }
@@ -146,7 +154,6 @@ public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     tvToogle2.setText(date);
-
                 } else {
                     tvToogle2.setText("-");
                 }
@@ -157,7 +164,6 @@ public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     tvToogle3.setText(date);
-
                 } else {
                     tvToogle3.setText("-");
                 }
