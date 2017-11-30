@@ -73,7 +73,6 @@ public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
 
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
-
         String fontPath = LoginMainActivity.fontPath;
         Typeface tf = Typeface.createFromAsset(context.getAssets(), fontPath);
         IndikatorLv1 indikatorLv1 = (IndikatorLv1) getGroup(groupPosition);
@@ -87,14 +86,13 @@ public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
         heading.setTypeface(tf, Typeface.BOLD);
         headingID.setTypeface(tf, Typeface.BOLD);
         heading.setText(indikatorLv1.getNama().trim());
-        headingID.setText(indikatorLv1.getID().trim());
+        headingID.setText(indikatorLv1.getId().trim());
 
         return convertView;
     }
 
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-
         String fontPath = LoginMainActivity.fontPath;
         Typeface tf = Typeface.createFromAsset(context.getAssets(), fontPath);
         final IndikatorLv2 indikatorLv2 = (IndikatorLv2) getChild(groupPosition, childPosition);
@@ -106,7 +104,7 @@ public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
         TextView txtListChild = (TextView) convertView.findViewById(R.id.tv_detailChild);
         TextView idChild = (TextView) convertView.findViewById(R.id.tv_idChild);
         txtListChild.setText(indikatorLv2.getNama().trim());
-        idChild.setText(indikatorLv2.getID().trim());
+        idChild.setText(indikatorLv2.getId().trim());
 
         final Button btnSimpan = (Button) convertView.findViewById(R.id.btn_simpan);
         final ToggleButton toggleButton0 = (ToggleButton) convertView.findViewById(R.id.toggle0);
@@ -178,10 +176,14 @@ public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
             btnSimpan.setVisibility(View.GONE);
         }
 
+
         btnSimpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //DatabaseReference indikatorLv2DB = FirebaseDatabase.getInstance().getReference().child("Subindikator");
+                //System.out.println("key = "+indikatorLv2DB.getKey());
                 indikatorLv2.setState0(toggleButton0.isChecked());
+                //indikatorLv2DB.child("-L-8Y8MPVqmct88EN297").child("state0").setValue(toggleButton0.isChecked());
                 indikatorLv2.setState1(toggleButton1.isChecked());
                 indikatorLv2.setState2(toggleButton2.isChecked());
                 indikatorLv2.setState3(toggleButton3.isChecked());
@@ -211,12 +213,12 @@ public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
                 ArrayList<IndikatorLv2> indikatorLv2List = indikatorLv1.getLv2List();
                 ArrayList<IndikatorLv2> newList = new ArrayList<>();
                 for (IndikatorLv2 indikatorLv2 : indikatorLv2List) {
-                    if (indikatorLv2.getID().toLowerCase().contains(query) || indikatorLv2.getNama().toLowerCase().contains(query)) {
+                    if (indikatorLv2.getId().toLowerCase().contains(query) || indikatorLv2.getNama().toLowerCase().contains(query)) {
                         newList.add(indikatorLv2);
                     }
                 }
                 if (newList.size() > 0) {
-                    IndikatorLv1 nIndikatorLv1 = new IndikatorLv1(indikatorLv1.getID(), indikatorLv1.getNama(), newList);
+                    IndikatorLv1 nIndikatorLv1 = new IndikatorLv1(indikatorLv1.getId(), indikatorLv1.getNama(), newList);
                     indikatorLv1List.add(nIndikatorLv1);
                 }
             }

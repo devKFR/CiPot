@@ -5,16 +5,29 @@ package com.ddpl.cipot;
  */
 
 public class IndikatorLv2 {
-    private String ID = "", nama = "";
+
+
+    private String id = "", nama = "";
     private boolean state0, state1, state2, state3;
 
-    public IndikatorLv2(String ID, String nama) {
-        this.ID = ID;
+    public IndikatorLv2() {
+    }
+
+    public IndikatorLv2(String id, String nama, boolean state0, boolean state1, boolean state2, boolean state3) {
+        this.id = id;
         this.nama = nama;
-        this.state0 = isState0();
-        this.state1 = isState1();
-        this.state2 = isState2();
-        this.state3 = isState3();
+        this.state0 = state0;
+        this.state1 = state1;
+        this.state2 = state2;
+        this.state3 = state3;
+    }
+
+    public boolean isState0() {
+        return state0;
+    }
+
+    public void setState0(boolean state0) {
+        this.state0 = state0;
     }
 
     public boolean isState1() {
@@ -41,20 +54,12 @@ public class IndikatorLv2 {
         this.state3 = state3;
     }
 
-    public boolean isState0() {
-        return state0;
+    public String getId() {
+        return id;
     }
 
-    public void setState0(boolean state0) {
-        this.state0 = state0;
-    }
-
-    public String getID() {
-        return ID;
-    }
-
-    public void setID(String ID) {
-        this.ID = ID;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getNama() {

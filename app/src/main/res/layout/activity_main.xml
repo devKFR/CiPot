@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:background="@drawable/kotak_dca340"
-            android:hint="Nomor ID"
+            android:hint="Nomor id"
             android:inputType="number"
             android:textAlignment="center"
             android:textSize="22dp" />
