@@ -10,8 +10,10 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ToggleButton;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -92,7 +94,8 @@ public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
     }
 
     @Override
-    public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
+    public View getChildView(int groupPosition, final int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
+        final DatabaseReference indikatorLv2DB = FirebaseDatabase.getInstance().getReference().child("Subindikator");
         String fontPath = LoginMainActivity.fontPath;
         Typeface tf = Typeface.createFromAsset(context.getAssets(), fontPath);
         final IndikatorLv2 indikatorLv2 = (IndikatorLv2) getChild(groupPosition, childPosition);
@@ -168,6 +171,11 @@ public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
             }
         });
 
+        if (toggleButton0.isChecked()) tvToogle0.setText(date);
+        if (toggleButton1.isChecked()) tvToogle1.setText(date);
+        if (toggleButton2.isChecked()) tvToogle2.setText(date);
+        if (toggleButton3.isChecked()) tvToogle3.setText(date);
+
         if (LoginMainActivity.login.equals("Siswa")) {
             toggleButton0.setClickable(false);
             toggleButton1.setClickable(false);
@@ -176,19 +184,22 @@ public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
             btnSimpan.setVisibility(View.GONE);
         }
 
+        final int posisi = groupPosition * 2 + childPosition;
 
         btnSimpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //DatabaseReference indikatorLv2DB = FirebaseDatabase.getInstance().getReference().child("Subindikator");
                 //System.out.println("key = "+indikatorLv2DB.getKey());
                 indikatorLv2.setState0(toggleButton0.isChecked());
-                //indikatorLv2DB.child("-L-8Y8MPVqmct88EN297").child("state0").setValue(toggleButton0.isChecked());
+                indikatorLv2DB.child(IndikatorKemampuanDetailActivity.key.get(posisi)).child("state0").setValue(toggleButton0.isChecked());
                 indikatorLv2.setState1(toggleButton1.isChecked());
+                indikatorLv2DB.child(IndikatorKemampuanDetailActivity.key.get(posisi)).child("state1").setValue(toggleButton1.isChecked());
                 indikatorLv2.setState2(toggleButton2.isChecked());
+                indikatorLv2DB.child(IndikatorKemampuanDetailActivity.key.get(posisi)).child("state2").setValue(toggleButton2.isChecked());
                 indikatorLv2.setState3(toggleButton3.isChecked());
-                Toast.makeText(context, indikatorLv2.isState0() + "" + indikatorLv2.isState1()
-                        + "" + indikatorLv2.isState2() + "" + indikatorLv2.isState3(), Toast.LENGTH_SHORT).show();
+                indikatorLv2DB.child(IndikatorKemampuanDetailActivity.key.get(posisi)).child("state3").setValue(toggleButton3.isChecked());
+                //Toast.makeText(context, indikatorLv2.isState0() + "" + indikatorLv2.isState1()
+                //        + "" + indikatorLv2.isState2() + "" + indikatorLv2.isState3(), Toast.LENGTH_SHORT).show();
 
             }
         });

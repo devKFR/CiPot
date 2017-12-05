@@ -61,7 +61,7 @@ public class SiswaHomeActivity extends AppCompatActivity implements View.OnClick
                 startActivity(profil);
                 break;
             case R.id.btn_indikatorSiswa:
-                Intent indikator = new Intent(this, IndikatorKemampuanActivity.class);
+                Intent indikator = new Intent(this, IndikatorKemampuanDetailActivity.class);
                 startActivity(indikator);
                 break;
             case R.id.btn_laporanSiswa:

@@ -26,6 +26,7 @@ import java.util.ArrayList;
 public class IndikatorKemampuanDetailActivity extends AppCompatActivity implements View.OnClickListener, SearchView.OnQueryTextListener, SearchView.OnCloseListener {
 
     public static String hold;
+    public static ArrayList<String> key = new ArrayList<>();
 
     private Context context = this;
     private SearchView search;
@@ -33,6 +34,9 @@ public class IndikatorKemampuanDetailActivity extends AppCompatActivity implemen
     private ExpandableListView expListView;
     private ArrayList<IndikatorLv1> indikatorLv1List = new ArrayList<>();
     private ArrayList<IndikatorLv2> indikatorLv2List = new ArrayList<>();
+    private ArrayList<IndikatorLv2> indikatorLv2141 = new ArrayList<>();
+    private ArrayList<IndikatorLv2> indikatorLv2212 = new ArrayList<>();
+    private ArrayList<IndikatorLv2> indikatorLv2325 = new ArrayList<>();
     private DatabaseReference indikatorLv1DB, indikatorLv2DB;
 
     @Override
@@ -54,25 +58,16 @@ public class IndikatorKemampuanDetailActivity extends AppCompatActivity implemen
         search.setOnCloseListener(this);
 
         displayList();
-
-        /*expListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-            @Override
-            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-                Toast.makeText(getApplicationContext(), "a", Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        });*/
-
     }
 
     public void onClick(View v) {
         if (v.getId() == R.id.btn_kembaliIndikatorDetail) {
             if (LoginMainActivity.login.equals("Siswa")) {
-                Intent back = new Intent(this, IndikatorKemampuanActivity.class);
+                Intent back = new Intent(this, SiswaHomeActivity.class);
                 back.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivityIfNeeded(back, 0);
             } else {
-                Intent back = new Intent(this, UpdateDataSiswaActivity.class);
+                Intent back = new Intent(this, GuruHomeActivity.class);
                 back.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivityIfNeeded(back, 0);
             }
@@ -98,10 +93,19 @@ public class IndikatorKemampuanDetailActivity extends AppCompatActivity implemen
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         IndikatorLv2 indikatorLv2;
                         for (DataSnapshot indikator2 : dataSnapshot.getChildren()) {
-                            //Log.i("indikatorLv2 = ", indikator2.getKey());
+                            key.add(indikator2.getKey());
                             indikatorLv2 = indikator2.getValue(IndikatorLv2.class);
                             indikatorLv2.setId(indikator2.getValue(IndikatorLv2.class).getId());
-                            indikatorLv2List.add(indikatorLv2);
+                            String id = indikator2.getValue(IndikatorLv2.class).getId().substring(0, 5);
+                            if (id.equalsIgnoreCase("1.4.1")) {
+                                indikatorLv2141.add(indikatorLv2);
+                            }
+                            if (id.equalsIgnoreCase("2.1.2")) {
+                                indikatorLv2212.add(indikatorLv2);
+                            }
+                            if (id.equalsIgnoreCase("3.2.5")) {
+                                indikatorLv2325.add(indikatorLv2);
+                            }
                         }
                     }
 
@@ -111,11 +115,19 @@ public class IndikatorKemampuanDetailActivity extends AppCompatActivity implemen
                     }
                 });
                 for (DataSnapshot indikator1 : dataSnapshot.getChildren()) {
-                    //Log.i("indikatorLv1 = ", indikator1.getKey());
                     indikatorLv1 = indikator1.getValue(IndikatorLv1.class);
-                    indikatorLv1.setLv2List(indikatorLv2List);
-                    indikatorLv1.setNama(indikator1.getValue(IndikatorLv1.class).getNama());
                     indikatorLv1.setId(indikator1.getValue(IndikatorLv1.class).getId());
+                    indikatorLv1.setNama(indikator1.getValue(IndikatorLv1.class).getNama());
+                    String id = indikator1.getValue(IndikatorLv1.class).getId().substring(0, 5);
+                    if (id.equalsIgnoreCase("1.4.1")) {
+                        indikatorLv1.setLv2List(indikatorLv2141);
+                    }
+                    if (id.equalsIgnoreCase("2.1.2")) {
+                        indikatorLv1.setLv2List(indikatorLv2212);
+                    }
+                    if (id.equalsIgnoreCase("3.2.5")) {
+                        indikatorLv1.setLv2List(indikatorLv2325);
+                    }
                     indikatorLv1List.add(indikatorLv1);
                 }
                 sendToArrayList();
@@ -135,38 +147,6 @@ public class IndikatorKemampuanDetailActivity extends AppCompatActivity implemen
         // attach the adapter to the list
         expListView.setAdapter(indikatorExpandableAdapter);
     }
-
-    /*private void loadData() {
-        IndikatorLv1 indikatorLv1;
-        IndikatorLv2 indikatorLv2;
-
-        ArrayList<IndikatorLv2> indikatorLv2List = new ArrayList<>();
-        indikatorLv2 = new IndikatorLv2("3.1.1.1", "Menyebutkan rasa asin dan manis di " + getIntent().getStringExtra(hold));
-        indikatorLv2List.add(indikatorLv2);
-        indikatorLv2 = new IndikatorLv2("3.1.1.1", "Menyebutkan rasa lainnya di " + getIntent().getStringExtra(hold));
-        indikatorLv2List.add(indikatorLv2);
-
-        indikatorLv1 = new IndikatorLv1("3.1.1", "Membedakan Rasa di " + getIntent().getStringExtra(hold), indikatorLv2List);
-        indikatorLv1List.add(indikatorLv1);
-
-        indikatorLv2List = new ArrayList<>();
-        indikatorLv2 = new IndikatorLv2("3.1.1.1", "Berpaling dari bau tidak sedap di " + getIntent().getStringExtra(hold));
-        indikatorLv2List.add(indikatorLv2);
-        indikatorLv2 = new IndikatorLv2("3.1.1.1", "Berusaha menghindari bau tidak sedap di " + getIntent().getStringExtra(hold));
-        indikatorLv2List.add(indikatorLv2);
-
-        indikatorLv1 = new IndikatorLv1("3.1.2", "Merespon Bau di " + getIntent().getStringExtra(hold), indikatorLv2List);
-        indikatorLv1List.add(indikatorLv1);
-
-        indikatorLv2List = new ArrayList<>();
-        indikatorLv2 = new IndikatorLv2("3.1.1.1", "Menyebut bau wangi di " + getIntent().getStringExtra(hold));
-        indikatorLv2List.add(indikatorLv2);
-        indikatorLv2 = new IndikatorLv2("3.1.1.1", "Menyebut nama benda yang bau di " + getIntent().getStringExtra(hold));
-        indikatorLv2List.add(indikatorLv2);
-
-        indikatorLv1 = new IndikatorLv1("3.1.3", "Membedakan Bau di " + getIntent().getStringExtra(hold), indikatorLv2List);
-        indikatorLv1List.add(indikatorLv1);
-    }*/
 
     @Override
     public boolean onClose() {

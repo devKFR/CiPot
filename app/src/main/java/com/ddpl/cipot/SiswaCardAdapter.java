@@ -13,8 +13,7 @@ import android.widget.TextView;
 
 public class SiswaCardAdapter extends RecyclerView.Adapter<SiswaCardAdapter.CardViewHolder> {
 
-    String[] text = new String[]{"Siswa Aasdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-            "Siswa B", "Siswa C", "Siswa D", "Siswa E", "Siswa F", "Siswa G", "Siswa H", "Siswa I"};
+    String[] text = new String[]{"Fardhan"};
     private Context context;
 
     public SiswaCardAdapter(Context context) {

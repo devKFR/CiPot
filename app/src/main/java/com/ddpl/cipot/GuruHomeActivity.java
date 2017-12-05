@@ -66,8 +66,8 @@ public class GuruHomeActivity extends AppCompatActivity implements View.OnClickL
 
     private void showSelected(SiswaCardAdapter adapter, int position) {
         Toast.makeText(this, "Kamu memilih " + adapter.text[position], Toast.LENGTH_SHORT).show();
-        Intent updateData = new Intent(GuruHomeActivity.this, UpdateDataSiswaActivity.class);
-        updateData.putExtra(UpdateDataSiswaActivity.namaSiswaUpdate, adapter.text[position]);
+        Intent updateData = new Intent(GuruHomeActivity.this, IndikatorKemampuanDetailActivity.class);
+        //updateData.putExtra(UpdateDataSiswaActivity.namaSiswaUpdate, adapter.text[position]);
         startActivity(updateData);
     }
 
