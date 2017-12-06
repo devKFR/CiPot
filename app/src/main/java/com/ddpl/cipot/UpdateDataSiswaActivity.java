@@ -14,7 +14,6 @@ import android.widget.Toast;
 public class UpdateDataSiswaActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static String namaSiswaUpdate;
-    private RecyclerView rvCategory;
     private Button btnTambahLaporan, btnKembali;
     private TextView tvNama, tvTanggal;
 
@@ -30,7 +29,7 @@ public class UpdateDataSiswaActivity extends AppCompatActivity implements View.O
         btnKembali = (Button) findViewById(R.id.btn_kembaliUpdateDataSiswa);
         btnKembali.setOnClickListener(this);
 
-        rvCategory = (RecyclerView) findViewById(R.id.rv_category);
+        RecyclerView rvCategory = (RecyclerView) findViewById(R.id.rv_category);
         rvCategory.setHasFixedSize(true);
         rvCategory.setFocusable(false);
 

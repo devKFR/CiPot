@@ -1,5 +1,6 @@
 package com.ddpl.cipot;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -16,10 +17,12 @@ import com.google.firebase.auth.FirebaseAuth;
 public class GuruHomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static String Nama = "", upDate;
-    private RecyclerView rvCategory;
     private Button btnLogout;
-    private TextView tvNama, tvTanggal, txtHalamanUtama, txtNamaSiswaTitle;
+    private TextView tvNama;
+    private TextView tvTanggal;
+    private TextView txtHalamanUtama;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,14 +31,13 @@ public class GuruHomeActivity extends AppCompatActivity implements View.OnClickL
         tvNama = (TextView) findViewById(R.id.tv_namaGuru);
         tvTanggal = (TextView) findViewById(R.id.tv_updateGuru);
         txtHalamanUtama = (TextView) findViewById(R.id.txt_halamanUtamaGuru);
-        txtNamaSiswaTitle = (TextView) findViewById(R.id.txt_namaSiswaDitangani);
         btnLogout = (Button) findViewById(R.id.btn_logout);
         btnLogout.setOnClickListener(this);
 
-        tvNama.setText("Nama Guru :" + getIntent().getStringExtra(Nama));
-        tvTanggal.setText("Update Terakhir :" + getIntent().getStringExtra(upDate));
+        tvNama.setText("Eva");
+        tvTanggal.setText("Update Terakhir : " + getIntent().getStringExtra(upDate));
 
-        rvCategory = (RecyclerView) findViewById(R.id.rv_category);
+        RecyclerView rvCategory = (RecyclerView) findViewById(R.id.rv_category);
         rvCategory.setHasFixedSize(true);
         rvCategory.setNestedScrollingEnabled(false);
         rvCategory.setFocusable(false);

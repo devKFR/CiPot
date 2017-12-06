@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 public class IndikatorKemampuanActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private RecyclerView rvCategory;
     private TextView txtJudul;
     private Button btnKembali;
 
@@ -26,7 +25,7 @@ public class IndikatorKemampuanActivity extends AppCompatActivity implements Vie
         btnKembali = (Button) findViewById(R.id.btn_kembaliIndikator);
         btnKembali.setOnClickListener(this);
 
-        rvCategory = (RecyclerView) findViewById(R.id.rv_category);
+        RecyclerView rvCategory = (RecyclerView) findViewById(R.id.rv_category);
         rvCategory.setHasFixedSize(true);
 
         rvCategory.setLayoutManager(new LinearLayoutManager(this));

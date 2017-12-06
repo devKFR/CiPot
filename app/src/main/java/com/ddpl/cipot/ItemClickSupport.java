@@ -3,10 +3,6 @@ package com.ddpl.cipot;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-/**
- * Created by user on 20/10/2017.
- */
-
 public class ItemClickSupport {
     private final RecyclerView mRecyclerView;
     private OnItemClickListener mOnItemClickListener;
@@ -56,7 +52,7 @@ public class ItemClickSupport {
         mRecyclerView.addOnChildAttachStateChangeListener(mAttachListener);
     }
 
-    public static ItemClickSupport addTo(RecyclerView view) {
+    static ItemClickSupport addTo(RecyclerView view) {
         ItemClickSupport support = (ItemClickSupport) view.getTag(R.id.item_click_support);
         if (support == null) {
             support = new ItemClickSupport(view);
@@ -72,9 +68,8 @@ public class ItemClickSupport {
         return support;
     }
 
-    public ItemClickSupport setOnItemClickListener(OnItemClickListener listener) {
+    void setOnItemClickListener(OnItemClickListener listener) {
         mOnItemClickListener = listener;
-        return this;
     }
 
     public ItemClickSupport setOnItemLongClickListener(OnItemLongClickListener listener) {

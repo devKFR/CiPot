@@ -8,7 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class SiswaProfilActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -30,7 +34,7 @@ public class SiswaProfilActivity extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil_siswa);
 
-        String Siswa = getIntent().getStringExtra(namaSiswa);
+        final String Siswa = getIntent().getStringExtra(namaSiswa);
 
         btnKembali = (Button) findViewById(R.id.btn_kembaliProfil);
         btnKembali.setOnClickListener(this);
@@ -66,6 +70,33 @@ public class SiswaProfilActivity extends AppCompatActivity implements View.OnCli
         tv_tempatLahir = (TextView) findViewById(R.id.tv_tempatLahir);
 
         setFont();
+
+        DatabaseReference dataSiswa = FirebaseDatabase.getInstance().getReference().child("Siswa").child("201506283");
+        dataSiswa.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Siswa siswa = dataSnapshot.getValue(Siswa.class);
+                tv_agama.setText(siswa.getAgama());
+                tv_alamat.setText(siswa.getAlamat());
+                tv_anakKe.setText(String.valueOf(siswa.getAnakKe()));
+                tv_jenisKelamin.setText(siswa.getjKelamin());
+                tv_jumlahSaudara.setText(String.valueOf(siswa.getJumlahSaudara()));
+                tv_namaAyah.setText(siswa.getNamaAyah());
+                tv_namaIbu.setText(siswa.getNamaIbu());
+                tv_namaLengkap.setText(siswa.getNamaLengkap());
+                tv_namaPanggilan.setText(siswa.getNamaPanggilan());
+                tv_nomorAkta.setText(siswa.getNoAkta());
+                tv_pekerjaanAyah.setText(siswa.getPekerjaanAyah());
+                tv_pekerjaanIbu.setText((siswa.getPekerjaanIbu()));
+                tv_tanggalLahir.setText(String.valueOf(siswa.getTglLahir()));
+                tv_tempatLahir.setText(siswa.getTempatLahir());
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     private void setFont() {

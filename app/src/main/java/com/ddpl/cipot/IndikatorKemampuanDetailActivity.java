@@ -19,25 +19,20 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-/**
- * Created by user on 10/11/2017.
- */
-
 public class IndikatorKemampuanDetailActivity extends AppCompatActivity implements View.OnClickListener, SearchView.OnQueryTextListener, SearchView.OnCloseListener {
 
     public static String hold;
     public static ArrayList<String> key = new ArrayList<>();
 
     private Context context = this;
-    private SearchView search;
     private IndikatorExpandableAdapter indikatorExpandableAdapter;
     private ExpandableListView expListView;
     private ArrayList<IndikatorLv1> indikatorLv1List = new ArrayList<>();
-    private ArrayList<IndikatorLv2> indikatorLv2List = new ArrayList<>();
+    //private ArrayList<IndikatorLv2> indikatorLv2List = new ArrayList<>();
     private ArrayList<IndikatorLv2> indikatorLv2141 = new ArrayList<>();
     private ArrayList<IndikatorLv2> indikatorLv2212 = new ArrayList<>();
     private ArrayList<IndikatorLv2> indikatorLv2325 = new ArrayList<>();
-    private DatabaseReference indikatorLv1DB, indikatorLv2DB;
+    private DatabaseReference indikatorLv2DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +46,10 @@ public class IndikatorKemampuanDetailActivity extends AppCompatActivity implemen
         judul.setText(getIntent().getStringExtra(hold));
 
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        search = (SearchView) findViewById(R.id.search_indikator);
-        search.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        SearchView search = (SearchView) findViewById(R.id.search_indikator);
+        if (searchManager != null) {
+            search.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        }
         search.setIconifiedByDefault(false);
         search.setOnQueryTextListener(this);
         search.setOnCloseListener(this);
@@ -82,7 +79,7 @@ public class IndikatorKemampuanDetailActivity extends AppCompatActivity implemen
     }
 
     private void displayList() {
-        indikatorLv1DB = FirebaseDatabase.getInstance().getReference().child("Indikator");
+        DatabaseReference indikatorLv1DB = FirebaseDatabase.getInstance().getReference().child("Indikator");
         indikatorLv2DB = FirebaseDatabase.getInstance().getReference().child("Subindikator");
         indikatorLv1DB.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -163,7 +160,6 @@ public class IndikatorKemampuanDetailActivity extends AppCompatActivity implemen
     @Override
     public boolean onQueryTextChange(String newText) {
         indikatorExpandableAdapter.filterData(newText);
-        expandAll();
         return false;
     }
 }

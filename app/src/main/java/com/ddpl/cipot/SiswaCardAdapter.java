@@ -16,7 +16,7 @@ public class SiswaCardAdapter extends RecyclerView.Adapter<SiswaCardAdapter.Card
     String[] text = new String[]{"Fardhan"};
     private Context context;
 
-    public SiswaCardAdapter(Context context) {
+    SiswaCardAdapter(Context context) {
         this.context = context;
     }
 
@@ -51,7 +51,7 @@ public class SiswaCardAdapter extends RecyclerView.Adapter<SiswaCardAdapter.Card
         RelativeLayout cardSiswa;
         CardView cardViewSiswa;
 
-        public CardViewHolder(View v) {
+        CardViewHolder(View v) {
             super(v);
             imgSiswa = (ImageView) v.findViewById(R.id.iv_fotoSiswa);
             tvNamaSiswa = (TextView) v.findViewById(R.id.tv_namaSiswaUpdate);

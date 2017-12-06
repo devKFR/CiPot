@@ -1,5 +1,6 @@
 package com.ddpl.cipot;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ public class SiswaHomeActivity extends AppCompatActivity implements View.OnClick
     private TextView tvNama, tvTanggal, tvHome;
     private Button btnProfil, btnIndikator, btnLaporan, btnLogout;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,10 +35,10 @@ public class SiswaHomeActivity extends AppCompatActivity implements View.OnClick
         btnLogout = (Button) findViewById(R.id.btn_logout);
         btnLogout.setOnClickListener(this);
 
-        String nama = getIntent().getStringExtra(Nama);
+        //String nama = getIntent().getStringExtra(Nama);
         String update = getIntent().getStringExtra(upDate);
-        tvNama.setText(nama);
-        tvTanggal.setText("Update Terakhir :"+update);
+        tvNama.setText("Fardhan");
+        tvTanggal.setText("Update Terakhir : " + update);
 
         setFont();
     }

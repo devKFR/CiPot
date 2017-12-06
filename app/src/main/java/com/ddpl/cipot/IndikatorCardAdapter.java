@@ -9,17 +9,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/**
- * Created by user on 18/10/2017.
- */
-
 public class IndikatorCardAdapter extends RecyclerView.Adapter<IndikatorCardAdapter.CardViewHolder> {
 
     String[] text = new String[]{"Kemampuan A", "Kemampuan B", "Kemampuan C", "Kemampuan D"};
 
-    Context context;
+    private Context context;
 
-    public IndikatorCardAdapter(Context context) {
+    IndikatorCardAdapter(Context context) {
         this.context = context;
     }
 
@@ -46,7 +42,7 @@ public class IndikatorCardAdapter extends RecyclerView.Adapter<IndikatorCardAdap
         ImageView imgIndikator;
         TextView tvIndikator;
 
-        public CardViewHolder(View v) {
+        CardViewHolder(View v) {
             super(v);
             imgIndikator = (ImageView) v.findViewById(R.id.iv_indikator);
             tvIndikator = (TextView) v.findViewById(R.id.tv_indikator);

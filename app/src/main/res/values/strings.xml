@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">CiPot</string>
     <string name="logo">logo</string>
+    <string name="identitas_siswa">Identitas Siswa</string>
+    <string name="nomor_akta">Nomor Akta</string>
+    <string name="text_placeholder">Text Placeholder</string>
 </resources>

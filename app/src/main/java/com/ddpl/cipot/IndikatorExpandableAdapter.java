@@ -1,5 +1,6 @@
 package com.ddpl.cipot;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.util.Log;
@@ -19,16 +20,12 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-/**
- * Created by user on 10/11/2017.
- */
-
 public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
 
     private Context context;
     private ArrayList<IndikatorLv1> indikatorLv1List, originalList;
 
-    public IndikatorExpandableAdapter(Context context, ArrayList<IndikatorLv1> indikatorLv1List) {
+    IndikatorExpandableAdapter(Context context, ArrayList<IndikatorLv1> indikatorLv1List) {
         this.context = context;
         this.indikatorLv1List = new ArrayList<>();
         this.indikatorLv1List.addAll(indikatorLv1List);
@@ -73,6 +70,7 @@ public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
         return true;
     }
 
+    @SuppressLint("InflateParams")
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
         String fontPath = LoginMainActivity.fontPath;
@@ -80,19 +78,30 @@ public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
         IndikatorLv1 indikatorLv1 = (IndikatorLv1) getGroup(groupPosition);
         if (convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = layoutInflater.inflate(R.layout.expandable_header, null);
+            if (layoutInflater != null) {
+                convertView = layoutInflater.inflate(R.layout.expandable_header, null);
+            }
         }
 
-        TextView heading = (TextView) convertView.findViewById(R.id.tv_namaHeader);
-        TextView headingID = (TextView) convertView.findViewById(R.id.tv_idHeader);
-        heading.setTypeface(tf, Typeface.BOLD);
-        headingID.setTypeface(tf, Typeface.BOLD);
-        heading.setText(indikatorLv1.getNama().trim());
-        headingID.setText(indikatorLv1.getId().trim());
+        TextView heading = (TextView) (convertView != null ? convertView.findViewById(R.id.tv_namaHeader) : null);
+        TextView headingID = (TextView) (convertView != null ? convertView.findViewById(R.id.tv_idHeader) : null);
+        if (heading != null) {
+            heading.setTypeface(tf, Typeface.BOLD);
+        }
+        if (headingID != null) {
+            headingID.setTypeface(tf, Typeface.BOLD);
+        }
+        if (heading != null) {
+            heading.setText(indikatorLv1.getNama().trim());
+        }
+        if (headingID != null) {
+            headingID.setText(indikatorLv1.getId().trim());
+        }
 
         return convertView;
     }
 
+    @SuppressLint("InflateParams")
     @Override
     public View getChildView(int groupPosition, final int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
         final DatabaseReference indikatorLv2DB = FirebaseDatabase.getInstance().getReference().child("Subindikator");
@@ -101,34 +110,54 @@ public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
         final IndikatorLv2 indikatorLv2 = (IndikatorLv2) getChild(groupPosition, childPosition);
         if (convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = layoutInflater.inflate(R.layout.expandable_child, null);
+            convertView = layoutInflater != null ? layoutInflater.inflate(R.layout.expandable_child, null) : null;
         }
 
-        TextView txtListChild = (TextView) convertView.findViewById(R.id.tv_detailChild);
-        TextView idChild = (TextView) convertView.findViewById(R.id.tv_idChild);
-        txtListChild.setText(indikatorLv2.getNama().trim());
-        idChild.setText(indikatorLv2.getId().trim());
+        TextView txtListChild = (TextView) (convertView != null ? convertView.findViewById(R.id.tv_detailChild) : null);
+        TextView idChild = (TextView) (convertView != null ? convertView.findViewById(R.id.tv_idChild) : null);
+        if (txtListChild != null) {
+            txtListChild.setText(indikatorLv2.getNama().trim());
+        }
+        if (idChild != null) {
+            idChild.setText(indikatorLv2.getId().trim());
+        }
 
-        final Button btnSimpan = (Button) convertView.findViewById(R.id.btn_simpan);
-        final ToggleButton toggleButton0 = (ToggleButton) convertView.findViewById(R.id.toggle0);
-        final ToggleButton toggleButton1 = (ToggleButton) convertView.findViewById(R.id.toggle1);
-        final ToggleButton toggleButton2 = (ToggleButton) convertView.findViewById(R.id.toggle2);
-        final ToggleButton toggleButton3 = (ToggleButton) convertView.findViewById(R.id.toggle3);
-        final TextView tvToogle0 = (TextView) convertView.findViewById(R.id.tv_toggle0);
-        final TextView tvToogle1 = (TextView) convertView.findViewById(R.id.tv_toggle1);
-        final TextView tvToogle2 = (TextView) convertView.findViewById(R.id.tv_toggle2);
-        final TextView tvToogle3 = (TextView) convertView.findViewById(R.id.tv_toggle3);
-        tvToogle0.setTypeface(tf);
-        tvToogle1.setTypeface(tf);
-        tvToogle2.setTypeface(tf);
-        tvToogle3.setTypeface(tf);
+        final Button btnSimpan = (Button) (convertView != null ? convertView.findViewById(R.id.btn_simpan) : null);
+        final ToggleButton toggleButton0 = (ToggleButton) (convertView != null ? convertView.findViewById(R.id.toggle0) : null);
+        final ToggleButton toggleButton1 = (ToggleButton) (convertView != null ? convertView.findViewById(R.id.toggle1) : null);
+        final ToggleButton toggleButton2 = (ToggleButton) (convertView != null ? convertView.findViewById(R.id.toggle2) : null);
+        final ToggleButton toggleButton3 = (ToggleButton) (convertView != null ? convertView.findViewById(R.id.toggle3) : null);
+        final TextView tvToogle0 = (TextView) (convertView != null ? convertView.findViewById(R.id.tv_toggle0) : null);
+        final TextView tvToogle1 = (TextView) (convertView != null ? convertView.findViewById(R.id.tv_toggle1) : null);
+        final TextView tvToogle2 = (TextView) (convertView != null ? convertView.findViewById(R.id.tv_toggle2) : null);
+        final TextView tvToogle3 = (TextView) (convertView != null ? convertView.findViewById(R.id.tv_toggle3) : null);
+        if (tvToogle0 != null) {
+            tvToogle0.setTypeface(tf);
+        }
+        if (tvToogle1 != null) {
+            tvToogle1.setTypeface(tf);
+        }
+        if (tvToogle2 != null) {
+            tvToogle2.setTypeface(tf);
+        }
+        if (tvToogle3 != null) {
+            tvToogle3.setTypeface(tf);
+        }
 
-        toggleButton0.setChecked(indikatorLv2.isState0());
-        toggleButton1.setChecked(indikatorLv2.isState1());
-        toggleButton2.setChecked(indikatorLv2.isState2());
-        toggleButton3.setChecked(indikatorLv2.isState3());
+        if (toggleButton0 != null) {
+            toggleButton0.setChecked(indikatorLv2.isState0());
+        }
+        if (toggleButton1 != null) {
+            toggleButton1.setChecked(indikatorLv2.isState1());
+        }
+        if (toggleButton2 != null) {
+            toggleButton2.setChecked(indikatorLv2.isState2());
+        }
+        if (toggleButton3 != null) {
+            toggleButton3.setChecked(indikatorLv2.isState3());
+        }
 
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         final String date = dateFormat.format(new Date());
         toggleButton0.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -212,7 +241,7 @@ public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
         return true;
     }
 
-    public void filterData(String query) {
+    void filterData(String query) {
         query = query.toLowerCase();
         Log.v("MyListAdapter", String.valueOf(indikatorLv1List.size()));
         indikatorLv1List.clear();

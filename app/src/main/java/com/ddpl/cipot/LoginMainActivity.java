@@ -1,5 +1,6 @@
 package com.ddpl.cipot;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -17,15 +18,21 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class LoginMainActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static String login = "", fontPath = "font/DidactGothic-Regular.ttf";
     private EditText edt_noInduk, edt_tanggal;
-    private String ID = "", date;
+    private String ID = "";
     private Button btn_login;
     private TextView txtPAUD, txtAlamat, txtSelamat;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    @SuppressLint("SimpleDateFormat")
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +45,7 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if (firebaseAuth.getCurrentUser() != null) {
+                    String date = dateFormat.format(new Date());
                     if (ID.equals("1")) {
                         login = "Siswa";
                         Intent login = new Intent(LoginMainActivity.this, SiswaHomeActivity.class);
@@ -91,9 +99,9 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
         mAuth.addAuthStateListener(mAuthListener);
     }
 
-    private void loginFirebase() {
+    void loginFirebase() {
         ID = edt_noInduk.getText().toString().trim();
-        date = edt_tanggal.getText().toString().trim();
+        String date = edt_tanggal.getText().toString().trim();
         boolean isEmptyFields = false;
         if (TextUtils.isEmpty(ID)) {
             isEmptyFields = true;
@@ -101,14 +109,14 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
         }
         if (TextUtils.isEmpty(date)) {
             isEmptyFields = true;
-            edt_tanggal.setError("Masukkan tanggal lahir");
+            edt_tanggal.setError("Masukkan password");
         }
         if (!isEmptyFields) {
             mAuth.signInWithEmailAndPassword(ID + "@a.com", date).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (!task.isSuccessful()) {
-                        Toast.makeText(LoginMainActivity.this, "Profil tidak ditemukan, mohon cek kembali nomor identitas dan tanggal lahir", Toast.LENGTH_LONG).show();
+                        Toast.makeText(LoginMainActivity.this, "Profil tidak ditemukan, mohon cek kembali data yang dimasukkan", Toast.LENGTH_LONG).show();
                     }
                 }
             });
