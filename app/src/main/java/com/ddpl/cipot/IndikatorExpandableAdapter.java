@@ -117,9 +117,11 @@ public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
         TextView idChild = (TextView) (convertView != null ? convertView.findViewById(R.id.tv_idChild) : null);
         if (txtListChild != null) {
             txtListChild.setText(indikatorLv2.getNama().trim());
+            txtListChild.setTypeface(tf);
         }
         if (idChild != null) {
             idChild.setText(indikatorLv2.getId().trim());
+            idChild.setTypeface(tf);
         }
 
         final Button btnSimpan = (Button) (convertView != null ? convertView.findViewById(R.id.btn_simpan) : null);
@@ -145,16 +147,16 @@ public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
         }
 
         if (toggleButton0 != null) {
-            toggleButton0.setChecked(indikatorLv2.isState0());
+            toggleButton0.setChecked(indikatorLv2.getState0());
         }
         if (toggleButton1 != null) {
-            toggleButton1.setChecked(indikatorLv2.isState1());
+            toggleButton1.setChecked(indikatorLv2.getState1());
         }
         if (toggleButton2 != null) {
-            toggleButton2.setChecked(indikatorLv2.isState2());
+            toggleButton2.setChecked(indikatorLv2.getState2());
         }
         if (toggleButton3 != null) {
-            toggleButton3.setChecked(indikatorLv2.isState3());
+            toggleButton3.setChecked(indikatorLv2.getState3());
         }
 
         @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
@@ -227,8 +229,8 @@ public class IndikatorExpandableAdapter extends BaseExpandableListAdapter {
                 indikatorLv2DB.child(IndikatorKemampuanDetailActivity.key.get(posisi)).child("state2").setValue(toggleButton2.isChecked());
                 indikatorLv2.setState3(toggleButton3.isChecked());
                 indikatorLv2DB.child(IndikatorKemampuanDetailActivity.key.get(posisi)).child("state3").setValue(toggleButton3.isChecked());
-                //Toast.makeText(context, indikatorLv2.isState0() + "" + indikatorLv2.isState1()
-                //        + "" + indikatorLv2.isState2() + "" + indikatorLv2.isState3(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, indikatorLv2.getState0() + "" + indikatorLv2.getState1()
+                //        + "" + indikatorLv2.getState2() + "" + indikatorLv2.getState3(), Toast.LENGTH_SHORT).show();
 
             }
         });
