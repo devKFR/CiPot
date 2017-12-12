@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CilokManja</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div class="container">
+  <div class="row">
+    <div class="col">
+      <form class="js-form">
+        <!-- Data yang ada di sini diumpetin -->
+        <div id="js-login-data">
+          <div class="form-group">
+            <label for="js-email">Email</label>
+            <input type="email" id="js-email" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="js-password">Password</label>
+            <input type="password" id="js-password" class="form-control" />
+          </div>
+          <button id="js-login" class="btn btn-primary">Login</button>
+        </div>
+        <!-- Main petak umpet nanti di sini -->
+      </form>
+    </div>
+  </div>
+</div>
+<div id="js-anjay" class="container hidden">
+  <div class="row">
+    <div class="col">
+      <div class="control-group" id="field">
+        <label class="control-label" style="font-weight:bold" for="field">Daftarkan Indikator</label>
+        <div class="controls">
+          <form class="utama id" role="form" autocomplete="off">
+            <div class="entry input-group">
+              <input id="js-message2" class="form-control" name="fields:" type="text" placeholder="Type something" />
+              <span class="input-group-btn">
+                  <button id="js-addform " class="btn btn-success btn-add" type="button">
+                                <span class="fa fa-plus"></span>
+              </button>
+              </span>
+            </div>
+            <!-------------------- INI SUB ENTRY BUAT MASUKIN SUB INDIKATOR ----------------------------->
+            <div class="subentry">
+              <div id="js-group" class="entry2 input-group hidden">
+                <input id="js-message3" class="form-control" name="fields2" type="text" placeholder="Type something" />
+                <span class="input-group-btn">
+                    <button id="js-addform3 " class="btn btn-success btn-add2" type="button">
+                                  <span class="fa fa-plus"></span>
+                </button>
+                </span>
+              </div>
+              <small class="label1"><span class="fa fa-plus"></span> tambahkan subindikator</small>
+            </div>
+            <!-------------------- INI SUB ENTRY BUAT MASUKIN SUB INDIKATOR ------------------------------>
+            <div class="kompentry">
+              <div id="js-group2" class="entry3 input-group hidden">
+                <input id="js-message4" class="form-control" name="fields3" type="text" placeholder="Type something" />
+                <span class="input-group-btn">
+                    <button id="js-addform4" class="btn btn-success btn-add3" type="button">
+                                  <span class="fa fa-plus"></span>
+                </button>
+                </span>
+              </div>
+              <small class="label2"><span class="fa fa-plus"></span> tambahkan kompetensi dasar</small>
+            </div>
+          </form>
+        </div>
+        <br/>
+        <button id="js-submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js'></script>
+<script src='https://www.gstatic.com/firebasejs/4.6.2/firebase.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js'></script>
+
+    <script  src="js/index.js"></script>
+
+</body>
+</html>
